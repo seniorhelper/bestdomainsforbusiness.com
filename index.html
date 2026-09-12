@@ -632,7 +632,7 @@ var CATS = [
       else rays[i].classList.remove("on");
     }
     ctrN.textContent = cat.n;
-    ctrN.setAttribute("fill", cat.hue);
+    ctrN.style.fill = cat.hue;
     ctrL.textContent = cat.label.toLowerCase();
     srH.textContent = cat.label;
     srH.style.color = cat.hue;
@@ -649,7 +649,7 @@ var CATS = [
 
   function reset(){
     wrapEl.classList.remove("dim");
-    ctrN.textContent = "578"; ctrN.setAttribute("fill", "#141230");
+    ctrN.textContent = "578"; ctrN.style.fill = "#141230";
     ctrL.textContent = "domains, one ray each";
     srH.textContent = "Every ray is a domain we own.";
     srH.style.color = "#141230";
