@@ -4,7 +4,7 @@ Static site, GitHub Pages. Apex URLs, no `.html` in any path, all-lowercase slug
 
 ## Uploading this
 
-41 files total, so it goes in one pass — no batching needed.
+46 files total, so it goes in one pass — no batching needed.
 
 1. Unzip.
 2. Go to the repo home on GitHub.
@@ -17,7 +17,7 @@ Dragging folders preserves their structure, so the page folders land correctly o
 
 ```
 /                                  home
-/domains/                          full catalog — 587 names, search + filters + profile modal
+/domains/                          full catalog — full catalog — search + filters + profile modal
 /domains/<category>/               14 category hubs
 /buy-a-domain/                     how an owner-direct purchase works
 /register-a-domain/                check availability first → BuyWebURL
@@ -26,7 +26,7 @@ Dragging folders preserves their structure, so the page folders land correctly o
 /what-is-my-domain-worth/          fundamentals tool + free valuation form
 /domain-and-website/               $99/mo custom-coded builds
 /sell-your-domain/                 seller intake
-/developed-assets/                 36 names with live sites on them
+/developed-assets/                 names with live sites on them
 /hosting/                          hosting explainer + affiliate link
 /does-a-keyword-domain-help-seo/   the honest-answer page
 /sit-down/                         carried forward intact, 3D room preserved
@@ -45,7 +45,7 @@ Dragging folders preserves their structure, so the page folders land correctly o
 - **–** minimizes the panel only; he stays on screen.
 - Proactive arrival is suppressed entirely when the dismiss flag is set.
 - Responses use no-repeat pools, so he does not say the same line twice in a session.
-- Knows all 587 names, the tag system, the acquisition pricing, and refuses to promise rankings.
+- Knows the full catalog, the tag system, the acquisition pricing, and refuses to promise rankings.
 
 ## Forms
 
