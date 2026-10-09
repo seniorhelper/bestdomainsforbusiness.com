@@ -11,21 +11,18 @@
 })();
 
 (function(){
-  var READY = {}, TOUCHED = {};
+  var READY = {};
   function ep(f){ return "https://formsubmit.co/" + atob(f.dataset.a) + String.fromCharCode(64) + atob(f.dataset.b); }
-  document.querySelectorAll("form.form").forEach(function(f){
+  document.querySelectorAll("form[data-a]").forEach(function(f){
     var id = f.id;
-    READY[id] = false; TOUCHED[id] = false;
-    setTimeout(function(){ READY[id] = true; }, 3600);
-    ["keydown","pointerdown"].forEach(function(ev){
-      f.addEventListener(ev, function(){ TOUCHED[id] = true; }, {once:true});
-    });
+    READY[id] = false;
+    setTimeout(function(){ READY[id] = true; }, 3500);
     f.addEventListener("submit", function(e){
       e.preventDefault();
       var stat = document.getElementById(id + "-stat");
       var hp = f.querySelector('input[name="_honey"]');
       if(hp && hp.value){ return; }
-      if(!READY[id] || !TOUCHED[id]){ return; }
+      if(!READY[id]){ stat.className="fstat err"; stat.textContent="Give the form a moment, then send again."; return; }
       var miss = null;
       f.querySelectorAll("[required]").forEach(function(el){
         if(!el.value.trim() && !miss) miss = el;
@@ -38,18 +35,18 @@
         .then(function(r){
           if(r.ok){
             stat.className="fstat ok";
-            stat.textContent="Got it — that came through. Someone will get back to you. If it is urgent, call 1-800-481-8638.";
+            stat.textContent="Sent. We'll get back to you shortly.";
             f.querySelectorAll("input:not([type=hidden]),select,textarea").forEach(function(el){el.value="";});
             btn.textContent="Sent";
           } else {
             stat.className="fstat err";
-            stat.textContent="That did not go through. Please call 1-800-481-8638 and we will take it down by phone.";
+            stat.textContent="That did not go through. Please call 1-800-481-8638.";
             btn.disabled=false; btn.textContent="Try again";
           }
         })
         .catch(function(){
           stat.className="fstat err";
-          stat.textContent="That did not go through. Please call 1-800-481-8638 and we will take it down by phone.";
+          stat.textContent="That did not go through. Please call 1-800-481-8638.";
           btn.disabled=false; btn.textContent="Try again";
         });
     });
