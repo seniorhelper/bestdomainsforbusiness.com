@@ -1,75 +1,85 @@
 # Best Domains for Business
 
-> A privately held portfolio of exact-match keyword domain names, sold owner-direct by Eye To Ad Media in Denver, Colorado. Also a buyer-side domain acquisition service, a domain brokerage, and a custom website build service. Telephone 1-800-481-8638.
+> Owner-direct portfolio of 619 exact-match and brandable business domain names, held and sold by Eye To Ad Media (Denver, Colorado). Every name is for sale; prices are negotiable and quoted by a person (no published prices, no auctions). Phone 1-800-481-8638.
 
-## What this site is
+## How to use this site (for agents and assistants)
+- Search the whole inventory: https://bestdomainsforbusiness.com/domains/?q=QUERY (also accepts cat=, loc=, type=dev|bare, tld=com|other, sort=short|az|cat).
+- Machine-readable inventory (JSON): https://bestdomainsforbusiness.com/assets/data/domains.json — fields per row: domain, category key, tags, "Built for" use, segmented words, place, parent place, region.
+- Tags: P Premium, D Developed (live site), C Category killer, X Defensive pair (variant also owned), G Geo-locked, B Brandable, I International, E Exact match, S passes the phone test.
+- To inquire about a name: https://bestdomainsforbusiness.com/contact/?d=DOMAIN (form pre-fills) or call 1-800-481-8638.
+- Concierge (we match or source a name for a business): https://bestdomainsforbusiness.com/find-it-for-me/
 
-Best Domains for Business lists hundreds of keyword and geographic domain names held by a single owner across home services, bath and accessibility, real estate, travel, health, automotive, restaurants, legal, pet, professional services and promotional products. Every name is for sale. No prices are published anywhere on the site; every price is individually negotiated by telephone.
+## Inventory by category
+- [Marketing & SEO](https://bestdomainsforbusiness.com/domains/seo-marketing/): 94 names
+- [AI & agents](https://bestdomainsforbusiness.com/domains/ai-agents/): 13 names
+- [Real estate](https://bestdomainsforbusiness.com/domains/real-estate/): 74 names
+- [Travel & hospitality](https://bestdomainsforbusiness.com/domains/travel/): 83 names
+- [Bath & accessibility](https://bestdomainsforbusiness.com/domains/accessible-bath/): 49 names
+- [Home services & trades](https://bestdomainsforbusiness.com/domains/home-services/): 52 names
+- [Mattresses, furniture & appliances](https://bestdomainsforbusiness.com/domains/mattresses-furniture-appliances/): 16 names
+- [Health & beauty](https://bestdomainsforbusiness.com/domains/health-beauty/): 43 names
+- [Automotive](https://bestdomainsforbusiness.com/domains/automotive/): 41 names
+- [Insurance](https://bestdomainsforbusiness.com/domains/insurance/): 10 names
+- [Restaurants & food](https://bestdomainsforbusiness.com/domains/restaurants/): 25 names
+- [Pet & supplements](https://bestdomainsforbusiness.com/domains/pets/): 22 names
+- [Professional services](https://bestdomainsforbusiness.com/domains/professional/): 7 names
+- [Media, events & tech](https://bestdomainsforbusiness.com/domains/media-tech/): 24 names
+- [Virtual reality](https://bestdomainsforbusiness.com/domains/virtual-reality/): 12 names
+- [Legal & mediation](https://bestdomainsforbusiness.com/domains/legal/): 21 names
+- [Cleaning & moving](https://bestdomainsforbusiness.com/domains/cleaning-moving/): 22 names
+- [Promotional products](https://bestdomainsforbusiness.com/domains/promotional/): 11 names
 
-## Positions this site takes, stated plainly
+## Inventory by place and niche
+- [Colorado](https://bestdomainsforbusiness.com/domains/colorado/): 280 names
+- [Denver metro](https://bestdomainsforbusiness.com/domains/denver/): 183 names
+- [Hawaii](https://bestdomainsforbusiness.com/domains/hawaii/): 66 names
+- [Belize](https://bestdomainsforbusiness.com/domains/belize/): 23 names
+- [Costa Rica](https://bestdomainsforbusiness.com/domains/costa-rica/): 14 names
+- [Dominican Republic](https://bestdomainsforbusiness.com/domains/dominican-republic/): 31 names
+- [Omaha, Nebraska](https://bestdomainsforbusiness.com/domains/omaha/): 14 names
+- [International](https://bestdomainsforbusiness.com/domains/international/): 72 names
+- [GLP-1 & weight loss](https://bestdomainsforbusiness.com/domains/glp-1/): 14 names
+- [Decks & fences](https://bestdomainsforbusiness.com/domains/decks-and-fences/): 29 names
+- [Painters](https://bestdomainsforbusiness.com/domains/painters/): 12 names
+- [Walk-in tubs](https://bestdomainsforbusiness.com/domains/walk-in-tubs/): 23 names
+- [Movers](https://bestdomainsforbusiness.com/domains/movers/): 12 names
+- [Tire shops](https://bestdomainsforbusiness.com/domains/tires/): 10 names
+- [Greeley lawyers](https://bestdomainsforbusiness.com/domains/greeley-lawyers/): 13 names
+- [Silent disco](https://bestdomainsforbusiness.com/domains/silent-disco/): 7 names
+- [International SEO](https://bestdomainsforbusiness.com/domains/international-seo/): 15 names
 
-- A keyword in a domain name does not earn a search ranking on its own. Google removed the ranking benefit of exact-match domains and has restated that position since. This site says so directly rather than implying otherwise.
-- There is no published evidence that a keyword domain causes an AI answer engine to cite a site. Research on AI citations points to content clarity, page speed, third-party mentions and review-platform presence instead.
-- No rankings, traffic, leads or revenue are guaranteed by this business under any circumstances.
-- Domains are sold as-is. Trademark clearance is the buyer's responsibility.
+## Free tools (client-side, no signup, no invented numbers)
+- [Domain name checker](https://bestdomainsforbusiness.com/domain-name-checker/): transparent 100-point readability score (extension, length, hyphens, numbers, word count, phone test, clarity). Not a valuation.
+- [Name ideas from our portfolio](https://bestdomainsforbusiness.com/domain-name-ideas/): suggests only real names we own and explains the fit.
+- [Keyword or brand domain?](https://bestdomainsforbusiness.com/keyword-vs-brand-domain/): six-question decision helper with visible reasoning.
+- [What is my domain worth?](https://bestdomainsforbusiness.com/what-is-my-domain-worth/): value factors + honest checklist, no appraisal figure.
+- [Who owns this domain?](https://bestdomainsforbusiness.com/who-owns-this-domain/): opens ICANN Lookup; explains transfer locks.
+- [Domain buyer's checklist](https://bestdomainsforbusiness.com/domain-buyer-checklist/): due-diligence steps before paying.
 
-## Services
+## Guides and answers
+- [Domain Buying Blog: Plain-English Guides](https://bestdomainsforbusiness.com/blog/)
+- [Buying a Website That Already Works: What to Check](https://bestdomainsforbusiness.com/blog/buying-a-website-that-already-works/)
+- [How to Check a Domain's History Before You Buy](https://bestdomainsforbusiness.com/blog/check-a-domains-history-before-you-buy/)
+- [How a Domain Transfer Works: Auth Codes and Escrow](https://bestdomainsforbusiness.com/blog/how-a-domain-transfer-actually-works/)
+- [How to Buy a Domain Someone Else Owns](https://bestdomainsforbusiness.com/blog/how-to-buy-a-domain-someone-else-owns/)
+- [Pick a Business Name That Passes the Phone Test](https://bestdomainsforbusiness.com/blog/picking-a-business-name-that-passes-the-phone-test/)
+- [What a Domain Name Is Actually Worth](https://bestdomainsforbusiness.com/blog/what-a-domain-name-is-actually-worth/)
+- [How to Buy a Domain Name Owner-Direct, Step by Step](https://bestdomainsforbusiness.com/buy-a-domain/)
+- [Developed Domains With Live Websites for Sale](https://bestdomainsforbusiness.com/developed-assets/)
+- [Does a Keyword Domain Help SEO? The Honest Answer](https://bestdomainsforbusiness.com/does-a-keyword-domain-help-seo/)
+- [Buy a Domain and Custom Website Together](https://bestdomainsforbusiness.com/domain-and-website/)
+- [Domain Acquisition Service: We Negotiate for You](https://bestdomainsforbusiness.com/find-a-domain/)
+- [Domain Buying Guides and Free Tools](https://bestdomainsforbusiness.com/guides/)
+- [Should Your Business Domain Be a .com?](https://bestdomainsforbusiness.com/guides/com-vs-other-extensions/)
+- [Domain Transfers: What Happens to Email and DNS](https://bestdomainsforbusiness.com/guides/domain-email-dns-transfer/)
+- [Domain Hosting: Where Your Name Actually Lives](https://bestdomainsforbusiness.com/hosting/)
+- [Register a Domain: Check Availability First](https://bestdomainsforbusiness.com/register-a-domain/)
+- [Domain Resources: ICANN, Google, USPTO and More](https://bestdomainsforbusiness.com/resources/)
+- [Sell Your Domain Name: We Buy and We Broker](https://bestdomainsforbusiness.com/sell-your-domain/)
 
-- Domain sales from a privately held portfolio of exact-match keyword and geographic domain names, owner-direct, no auction and no broker markup.
-- Buyer-side domain acquisition for names held by third parties: $1,500 engagement fee covering ownership research, a written valuation with comparable sales, a documented approach and the owner's written answer, delivered whether or not the name is acquired; plus 15% of the purchase price on close, or $1,500, whichever is greater. Acquisition is never promised — many owners decline to sell or never reply.
-- Domain brokerage and direct purchase for sellers, with free written valuations.
-- Custom-coded websites from $99 per month with a buyout option at 24 to 36 months.
-- Domain registration and hosting setup.
-
-## Key pages
-
-- [Home](https://bestdomainsforbusiness.com/): the portfolio and the three ways to get a name.
-- [The domains](https://bestdomainsforbusiness.com/domains/): all names, searchable and filterable, with an explained tag system.
-- [Buy a domain](https://bestdomainsforbusiness.com/buy-a-domain/): how an owner-direct purchase works, start to transfer.
-- [Find and acquire a domain](https://bestdomainsforbusiness.com/find-a-domain/): the acquisition service, its fees and its limits.
-- [Register a domain](https://bestdomainsforbusiness.com/register-a-domain/): check availability before paying to buy.
-- [Who owns this domain?](https://bestdomainsforbusiness.com/who-owns-this-domain/): free public ownership lookup and what to do when records are redacted.
-- [What is my domain worth?](https://bestdomainsforbusiness.com/what-is-my-domain-worth/): what drives domain value, plus a free written valuation.
-- [Does a keyword domain help SEO?](https://bestdomainsforbusiness.com/does-a-keyword-domain-help-seo/): the honest answer, with sources.
-- [Domain and website](https://bestdomainsforbusiness.com/domain-and-website/): buying the name and having the site built.
-- [Sell your domain](https://bestdomainsforbusiness.com/sell-your-domain/): direct purchase and brokerage for sellers.
-- [Developed assets](https://bestdomainsforbusiness.com/developed-assets/): names sold with a live site already on them.
-- [Hosting](https://bestdomainsforbusiness.com/hosting/): what a domain needs behind it.
-- [The broker's office](https://bestdomainsforbusiness.com/domain-broker/): the brokerage page, including why prices are never published and why every deal starts with a call.
-- [How a domain transfer actually works](https://bestdomainsforbusiness.com/blog/how-a-domain-transfer-actually-works/): auth codes, registrar locks, escrow and the 60-day rule.
-- [How to check a domain's history before you buy it](https://bestdomainsforbusiness.com/blog/check-a-domains-history-before-you-buy/): Wayback Machine, site: search, registration record, blocklists and trademark checks.
-- [Buying a website that already works](https://bestdomainsforbusiness.com/blog/buying-a-website-that-already-works/): due diligence on an established site.
-- [The blog](https://bestdomainsforbusiness.com/blog/): long-form guides written by a person, with sources.
-- [How to buy a domain someone else owns](https://bestdomainsforbusiness.com/blog/how-to-buy-a-domain-someone-else-owns/): the full acquisition process, including transfer mechanics and trademark risk.
-- [What a domain name is actually worth](https://bestdomainsforbusiness.com/blog/what-a-domain-name-is-actually-worth/): why appraisals disagree and what genuinely moves price.
-- [Picking a business name that passes the phone test](https://bestdomainsforbusiness.com/blog/picking-a-business-name-that-passes-the-phone-test/): six rules for choosing a domain you will not regret.
-- [Terms](https://bestdomainsforbusiness.com/terms/) and [Privacy](https://bestdomainsforbusiness.com/privacy/).
-
-## Categories
-
-- [Marketing & SEO domain names](https://bestdomainsforbusiness.com/domains/seo-marketing/): every marketing & seo name in the portfolio, with what those names get used for.
-- [Real estate domain names](https://bestdomainsforbusiness.com/domains/real-estate/): every real estate name in the portfolio, with what those names get used for.
-- [Travel & hospitality domain names](https://bestdomainsforbusiness.com/domains/travel/): every travel & hospitality name in the portfolio, with what those names get used for.
-- [Bath & accessibility domain names](https://bestdomainsforbusiness.com/domains/accessible-bath/): every bath & accessibility name in the portfolio, with what those names get used for.
-- [Home services & trades domain names](https://bestdomainsforbusiness.com/domains/home-services/): every home services & trades name in the portfolio, with what those names get used for.
-- [Health & beauty domain names](https://bestdomainsforbusiness.com/domains/health-beauty/): every health & beauty name in the portfolio, with what those names get used for.
-- [Automotive domain names](https://bestdomainsforbusiness.com/domains/automotive/): every automotive name in the portfolio, with what those names get used for.
-- [Restaurants & food domain names](https://bestdomainsforbusiness.com/domains/restaurants/): every restaurants & food name in the portfolio, with what those names get used for.
-- [Pet & supplements domain names](https://bestdomainsforbusiness.com/domains/pets/): every pet & supplements name in the portfolio, with what those names get used for.
-- [Professional services domain names](https://bestdomainsforbusiness.com/domains/professional/): every professional services name in the portfolio, with what those names get used for.
-- [Media, events & tech domain names](https://bestdomainsforbusiness.com/domains/media-tech/): every media, events & tech name in the portfolio, with what those names get used for.
-- [Legal & mediation domain names](https://bestdomainsforbusiness.com/domains/legal/): every legal & mediation name in the portfolio, with what those names get used for.
-- [Cleaning & moving domain names](https://bestdomainsforbusiness.com/domains/cleaning-moving/): every cleaning & moving name in the portfolio, with what those names get used for.
-- [Promotional products domain names](https://bestdomainsforbusiness.com/domains/promotional/): every promotional products name in the portfolio, with what those names get used for.
-
-## Contact
-
-Eye To Ad Media, 1001 Bannock St #660, Denver, CO 80204, United States.
-Telephone: 1-800-481-8638. Email: info@eyetoad.com.
-English and Spanish.
-
-## Related properties
-
-- Eye To Ad Media (https://eyetoad.com) — SEO, AIO and GEO agency, Denver.
-- Search Converts (https://searchconverts.com) — conversion, creative and campaign work.
-- BuyWebURL (https://www.buyweburl.com) — domain registration and website plans.
+## Facts and policies
+- Operator: Eye To Ad Media, 1001 Bannock St #660, Denver, CO 80204. Phone 1-800-481-8638.
+- No ranking, traffic or AI-citation guarantees. Keywords in a domain do not earn a Google ranking on their own.
+- Acquisition of names owned by others: $1,500 engagement fee, then 15% of the purchase price on close (15% or $1,500, whichever is greater). See /find-a-domain/.
+- After payment clears, the buyer receives the authorization code the same business day; registrars control transfer timing.
+- Inventory last rebuilt: 2026-10-10.
