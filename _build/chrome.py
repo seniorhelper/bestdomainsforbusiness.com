@@ -4,7 +4,7 @@ existing hand-written pages in sync with the shared chrome."""
 import re, json, html
 
 SITE = "https://bestdomainsforbusiness.com"
-VER = "20261010"
+VER = "20261011"
 TEL = "1-800-481-8638"
 
 BBB = ('<a class="bbb" href="https://www.bbb.org/us/co/denver/profile/advertising-agencies/search-converts-llc-1296-90228702/#sealclick" '
@@ -27,7 +27,7 @@ LOGO = ('<picture><source type="image/webp" srcset="/images/best-domains-for-bus
 CHEV = '<svg width="10" height="7" viewBox="0 0 10 7" aria-hidden="true"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>'
 
 TOOLS_MENU = [
-    ("/find-it-for-me/", "Find it for me", "Tell us your business. We match a name."),
+    ("/find-it-for-me/", "Find it for me", "Tell us your business. We match or source a name."),
     ("/domain-name-checker/", "Domain name checker", "Score any name, rules shown"),
     ("/domain-name-ideas/", "Name ideas from our portfolio", "Real names we own, explained"),
     ("/keyword-vs-brand-domain/", "Keyword or brand domain?", "Six questions, a straight answer"),
@@ -37,14 +37,21 @@ TOOLS_MENU = [
     ("/guides/", "Guides &amp; resources", "Plain-English answers, sourced"),
 ]
 MORE_MENU = [
-    ("/domain-broker/", "The broker&rsquo;s office", "Walk in. Ninety seconds."),
-    ("/domain-and-website/", "Domain + website", "A name and a site built on it"),
+    ("/find-a-domain/", "Find &amp; acquire a name", "Someone else owns it? We go get it"),
+    ("/register-a-domain/", "Register a new name", "Check availability first"),
     ("/sell-your-domain/", "Sell your domain", "We buy and we broker"),
-    ("/hosting/", "Hosting", "Where the name actually lives"),
+    ("/domain-and-website/", "Domain + website", "A name and a site built on it"),
     ("/developed-assets/", "Developed assets", "Live sites, not bare names"),
+    ("/domain-broker/", "The broker&rsquo;s office", "Walk in. Ninety seconds."),
+    ("/hosting/", "Hosting", "Where the name actually lives"),
     ("/does-a-keyword-domain-help-seo/", "Does a keyword domain help SEO?", "The straight answer"),
-    ("/blog/", "The blog", "Long-form, written by a person"),
     ("/sit-down/", "The sit-down", "How this turns into leads"),
+]
+# shortcuts shown only in the mobile menu (hamburger)
+MOB_SHORTCUTS = [
+    ("/domains/home-services/", "Home services"), ("/domains/real-estate/", "Real estate"), ("/domains/health-beauty/", "Health &amp; beauty"),
+    ("/domains/seo-marketing/", "Marketing &amp; SEO"), ("/domains/travel/", "Travel"), ("/domains/accessible-bath/", "Bath &amp; accessibility"),
+    ("/domains/legal/", "Legal"), ("/domains/automotive/", "Automotive"), ("/domains/denver/", "Denver"), ("/domains/colorado/", "Colorado"),
 ]
 
 
@@ -57,44 +64,50 @@ def _menu(items, path):
 
 
 def header(path):
-    def top(href, label):
-        on = path == href or (href == "/domains/" and path.startswith("/domains/"))
-        return f'<a href="{href}"' + (' class="on" aria-current="page"' if on else "") + f'>{label}</a>'
+    def top(href, label, cls=""):
+        on = path == href or (href == "/domains/" and path.startswith("/domains/")) or (href == "/blog/" and path.startswith("/blog/"))
+        classes = " ".join(x for x in (cls, "on" if on else "") if x)
+        return f'<a href="{href}"' + (f' class="{classes}"' if classes else "") + (' aria-current="page"' if on else "") + f'>{label}</a>'
+    shortcuts = ('<div class="mnav-cats mob-only" aria-label="Browse by category"><p class="mnav-h">Jump to a category</p><div class="mnav-chips">'
+                 + "".join(f'<a href="{h}">{l}</a>' for h, l in MOB_SHORTCUTS)
+                 + '<a class="mnav-all" href="/domains/#browse-cats">All categories &rarr;</a><a class="mnav-all" href="/domains/by-place/">By city &amp; state &rarr;</a></div></div>')
     return ('<header class="hdr"><div class="hdr-in">\n'
             f'<a class="brand" href="/" aria-label="Best Domains for Business — home">{LOGO}</a>\n'
             '<button class="navtog" aria-label="Menu" aria-expanded="false" aria-controls="nav" data-navtog><span></span><span></span><span></span></button>\n'
             '<nav class="hdr-nav" id="nav" aria-label="Primary">'
-            + top("/domains/", "The domains") + top("/buy-a-domain/", "Buy") + top("/find-a-domain/", "Find &amp; acquire") + top("/register-a-domain/", "Register")
+            + top("/domains/", "Browse domains", "nav-browse") + top("/find-it-for-me/", "Find it for me", "nav-find") + "\n" + shortcuts + "\n"
+            + top("/buy-a-domain/", "How buying works")
             + f'\n<span class="drop" data-drop><button type="button" aria-expanded="false">Free tools {CHEV}</button><span class="drop-menu">{_menu(TOOLS_MENU, path)}</span></span>'
+            + top("/guides/", "Guides", "mob-only") + top("/blog/", "Blog")
             + f'\n<span class="drop" data-drop><button type="button" aria-expanded="false">More {CHEV}</button><span class="drop-menu">{_menu(MORE_MENU, path)}</span></span>\n'
-            + top("/contact/", "Contact")
+            + top("/sell-your-domain/", "Sell your domain", "mob-only") + top("/contact/", "Contact")
             + f'\n<a class="hdr-tel" href="tel:+18004818638">{TEL}</a></nav></div></header>')
 
 
-def qbar(n):
+def qbar(n=None):
     return ('<div class="qbar"><div class="wrap qbar-in"><div class="qwrap">'
             '<form class="qform" action="/domains/" method="get" role="search">'
-            f'<label class="vh" for="qbar-q">Search {n} business domains for sale</label>'
-            f'<input id="qbar-q" type="search" name="q" placeholder="Search {n} domains — dentist, denver, walk-in tub…" autocomplete="off" enterkeyhint="search">'
+            '<label class="vh" for="qbar-q">Search business domains for sale</label>'
+            '<input id="qbar-q" type="search" name="q" placeholder="Search domains — dentist, denver, walk-in tub…" autocomplete="off" enterkeyhint="search">'
             '<button type="submit">Search</button></form>'
             '<div class="qdrop" id="qbar-drop" role="listbox" aria-label="Matching domains" hidden></div></div>'
-            '<a class="qbar-alt" href="/find-it-for-me/">Or let us find it for you &rarr;</a></div></div><!--/qbar-->')
+            '<a class="qbar-alt" href="/find-it-for-me/">Not here? We can find almost anything &rarr;</a></div></div><!--/qbar-->')
 
 
 FOOTER = ('<footer class="ftr"><div class="wrap"><div class="ftr-grid">\n'
-          '<div class="ftr-about"><h2 class="fh">Best Domains for Business</h2><p>Hundreds of exact-match keyword domains for home services, real estate, travel, health and the professional trades, held and sold by Eye To Ad Media in Denver. Every name is for sale and every price is negotiable. Call 1-800-481-8638.</p>'
+          '<div class="ftr-about"><h2 class="fh">Best Domains for Business</h2><p>A deep, owner-held portfolio of exact-match business domains, plus the reach to source names we do not own. We can access almost anything and find almost anything. Experts at the low-hanging fruit and at finding hidden gems that take your brand to new heights. Run by Eye To Ad Media in Denver. Call 1-800-481-8638.</p>'
           f'<div class="ftr-bbb">{BBB}</div></div>\n'
-          '<div><h2 class="fh">Browse &amp; buy</h2><ul><li><a href="/domains/">Every domain we own</a></li><li><a href="/find-it-for-me/">Find it for me</a></li><li><a href="/domains/by-place/">Browse by city &amp; state</a></li><li><a href="/buy-a-domain/">How buying works</a></li><li><a href="/domain-broker/">The broker&rsquo;s office</a></li><li><a href="/domain-and-website/">Domain + website</a></li><li><a href="/developed-assets/">Developed assets</a></li><li><a href="/register-a-domain/">Register a new name</a></li></ul></div>\n'
+          '<div><h2 class="fh">Browse &amp; buy</h2><ul><li><a href="/domains/">Browse domains</a></li><li><a href="/domains/#browse-cats">All categories</a></li><li><a href="/find-it-for-me/">Find it for me</a></li><li><a href="/domains/by-place/">Browse by city &amp; state</a></li><li><a href="/buy-a-domain/">How buying works</a></li><li><a href="/domain-broker/">The broker&rsquo;s office</a></li><li><a href="/domain-and-website/">Domain + website</a></li><li><a href="/developed-assets/">Developed assets</a></li><li><a href="/register-a-domain/">Register a new name</a></li></ul></div>\n'
           '<div><h2 class="fh">Tools &amp; answers</h2><ul><li><a href="/domain-name-checker/">Domain name checker</a></li><li><a href="/domain-name-ideas/">Name ideas from our portfolio</a></li><li><a href="/keyword-vs-brand-domain/">Keyword or brand domain?</a></li><li><a href="/what-is-my-domain-worth/">What is my domain worth?</a></li><li><a href="/who-owns-this-domain/">Who owns this domain?</a></li><li><a href="/domain-buyer-checklist/">Buyer&rsquo;s checklist</a></li><li><a href="/find-a-domain/">Find &amp; acquire a name</a></li><li><a href="/sell-your-domain/">Sell your domain</a></li><li><a href="/does-a-keyword-domain-help-seo/">Does a keyword domain help SEO?</a></li><li><a href="/hosting/">Hosting</a></li></ul></div>\n'
-          '<div><h2 class="fh">Company</h2><ul><li><a href="/guides/">Guides</a></li><li><a href="/resources/">Resources</a></li><li><a href="/blog/">The blog</a></li><li><a href="/sit-down/">The sit-down</a></li><li><a href="/contact/">Contact</a></li><li><a href="/terms/">Terms</a></li><li><a href="/privacy/">Privacy</a></li><li><a href="https://eyetoad.com" rel="noopener">Denver SEO, AIO and GEO agency</a></li><li><a href="https://searchconverts.com" rel="noopener">Websites built to convert</a></li><li><a href="https://conversationalaibot.com" rel="noopener">AI chatbots for business</a></li><li><a href="https://mysaleshelp.com" rel="noopener">Sales training and objection handling</a></li></ul></div>\n'
+          '<div><h2 class="fh">Company</h2><ul><li><a href="/blog/">Blog</a></li><li><a href="/guides/">Guides</a></li><li><a href="/resources/">Resources</a></li><li><a href="/sit-down/">The sit-down</a></li><li><a href="/contact/">Contact</a></li><li><a href="/terms/">Terms</a></li><li><a href="/privacy/">Privacy</a></li><li><a href="https://eyetoad.com" rel="noopener">Denver SEO, AIO and GEO agency</a></li><li><a href="https://searchconverts.com" rel="noopener">Websites built to convert</a></li><li><a href="https://conversationalaibot.com" rel="noopener">AI chatbots for business</a></li><li><a href="https://mysaleshelp.com" rel="noopener">Sales training and objection handling</a></li></ul></div>\n'
           '</div><div class="ftr-legal"><span>&copy; 2026 Best Domains for Business. All rights reserved.</span><span>Powered by <a href="https://eyetoad.com" rel="noopener">Eye To Ad Media</a> &middot; Denver, Colorado</span></div></div></footer>')
 
 TAIL = ('<div class="heartline"><a href="https://eyetoad.com" rel="noopener"><span class="hh" aria-hidden="true">&#10084;&#65039;</span> Need a website?</a></div>\n'
-        '<div class="callbar"><a href="tel:+18004818638" aria-label="Call 1-800-481-8638">&#9742;&#65039; ' + TEL + '</a><a class="cb2" href="/find-it-for-me/">Find my domain</a><span class="sub">A person answers &middot; English &amp; Spanish</span></div>\n'
+        '<div class="callbar"><a href="tel:+18004818638" aria-label="Call 1-800-481-8638">&#9742;&#65039; ' + TEL + '</a><a class="cb2" href="/find-it-for-me/">Find my domain</a><span class="sub">A real person answers</span></div>\n'
         f'<script src="/assets/js/nav.js?v={VER}" defer></script>\n<script src="/assets/js/finder.js?v={VER}" defer></script>\n<script src="/zach.js?v={VER}" defer></script>\n</body>\n</html>\n')
 
 ORG = {"@type": "Organization", "@id": SITE + "/#org", "name": "Best Domains for Business", "url": SITE, "telephone": "+1-800-481-8638",
-       "email": "info@eyetoad.com", "parentOrganization": {"@type": "Organization", "name": "Eye To Ad Media", "url": "https://eyetoad.com"},
+       "email": "info@eyetoad.com", "description": "Owner-direct business domain names and a find-it-for-me sourcing service: we sell names from our own portfolio and locate, value and negotiate for names we do not own.", "slogan": "We can access almost anything and find almost anything.", "parentOrganization": {"@type": "Organization", "name": "Eye To Ad Media", "url": "https://eyetoad.com"},
        "address": {"@type": "PostalAddress", "streetAddress": "1001 Bannock St #660", "addressLocality": "Denver", "addressRegion": "CO", "postalCode": "80204", "addressCountry": "US"},
        "logo": SITE + "/images/best-domains-for-business-logo.png", "sameAs": ["https://eyetoad.com", "https://searchconverts.com"]}
 WEBSITE = {"@type": "WebSite", "@id": SITE + "/#site", "url": SITE, "name": "Best Domains for Business", "publisher": {"@id": SITE + "/#org"},
@@ -149,13 +162,13 @@ def crumbs_html(crumbs):
 # ---------------- titles/descriptions for existing pages (<=60 / <=158) ----------------
 META = {
     "/": ("Business Domain Names for Sale, Owner-Direct",
-          "Search {n} exact-match business domains by trade or city. Owner-direct from Denver, no auction, every price negotiable. Or let us find one for you."),
-    "/domains/": ("Search {n} Business Domains for Sale | Domain Finder",
-                  "Instant search across {n} keyword domains by service, city or state. Filter by industry, location and type, then make an offer in two taps."),
+          "Search a deep portfolio of exact-match business domains by trade or city, or let us find the one you want. Owner-direct from Denver, every price negotiable."),
+    "/domains/": ("Browse Business Domains for Sale | Domain Finder",
+                  "Instant search across our business domain portfolio by service, city or state. Filter by industry and location, then make an offer in two taps."),
     "/buy-a-domain/": ("How to Buy a Domain Name Owner-Direct, Step by Step",
                        "How buying a domain from us works: pick the name, get a real number on a call, pay, and get the auth code the same business day. No auction."),
     "/contact/": ("Contact Best Domains for Business | 1-800-481-8638",
-                  "Ask about any domain in the portfolio, make an offer, or tell us what you need. A real person at Eye To Ad Media answers. Call 1-800-481-8638."),
+                  "Ask about any domain, make an offer, or tell us the name you are hunting for. A real person at Eye To Ad Media answers. Call 1-800-481-8638."),
     "/developed-assets/": ("Developed Domains With Live Websites for Sale",
                            "Domain names sold with a website already built on them: real pages, structure and history. A business asset, not a bare name. Every price negotiable."),
     "/does-a-keyword-domain-help-seo/": ("Does a Keyword Domain Help SEO? The Honest Answer",
@@ -183,7 +196,7 @@ META = {
     "/who-owns-this-domain/": ("Who Owns This Domain? Free Lookup + Transfer Guide",
                                "Look up any domain on ICANN Lookup, read the record, and learn how a transfer works, including the 60-day locks. Then get help buying it."),
     "/blog/": ("Domain Buying Blog: Plain-English Guides",
-               "Long-form articles on buying, valuing and transferring business domains, written by a person who sells them and will not promise you rankings."),
+               "Long-form articles on finding, buying, valuing and moving to a better business domain, written by a person who sells them and will not promise rankings."),
     "/blog/buying-a-website-that-already-works/": ("Buying a Website That Already Works: What to Check",
                                                    "Due diligence on an established website: verify traffic at the source, reconcile revenue, and learn which parts of a site actually transfer."),
     "/blog/check-a-domains-history-before-you-buy/": ("How to Check a Domain's History Before You Buy",
