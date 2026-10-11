@@ -159,7 +159,7 @@ var KB = [
    return pick("joke", JOKES)+"<br><br>Want another, or should we find you a name?";
  }],
  [/\b(human|person|real person|talk to someone|call me|representative)\b/, function(){
-   return "Of course. "+telLink()+" &mdash; a real person answers, and English or Spanish both work. Or use <a href='/contact/'>the contact form</a> and someone gets back to you, usually within one business day.";
+   return "Of course. "+telLink()+" &mdash; a real person answers. Or use <a href='/contact/'>the contact form</a> and someone gets back to you, usually within one business day.";
  }],
  [/\b(are you (a )?(real|human|bot|robot)|is this a bot)\b/, function(){
    return "I am an AI assistant for Best Domains for Business, not a person. I can answer what I actually know and hand you to a human the second it matters. "+telLink()+" gets you a real one.";

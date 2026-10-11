@@ -3,7 +3,7 @@
    No tracking, no third-party calls except FormSubmit when a visitor sends a form. */
 (function(){
 "use strict";
-var DATA_URL="/assets/data/domains.json?v=f9aab538ef";
+var DATA_URL="/assets/data/domains.json?v=1222589d8d";
 var TEL="1-800-481-8638", TELH="tel:+18004818638";
 var dataP=null, DB=null;
 
@@ -375,8 +375,8 @@ function catalog(root){
     list.forEach(function(r){ var c=cards[r.d]; if(c){ c.hidden=false; frag.appendChild(c); } });
     order.forEach(function(d){ if(!show[d]){ cards[d].hidden=true; frag.appendChild(cards[d]); } });
     grid.appendChild(frag);
-    var total=order.length;
-    tally.textContent=list.length===total?("All "+total+" names"):(list.length+" of "+total+" names");
+    var narrowed=q.value.trim()||fCat.value||fLoc.value||fType.value||fTld.value||tagOn;
+    tally.textContent=!narrowed?"Showing the full portfolio":(list.length===1?"1 match":list.length+" matches")+(q.value.trim()?" for \u201c"+q.value.trim()+"\u201d":"");
     empty.hidden=list.length>0;
     var eq=$("#empty-q"); if(eq) eq.textContent=q.value.trim()?"“"+q.value.trim()+"”":"those filters";
     var cf=$("#empty-cta"); if(cf) cf.href="/find-it-for-me/?q="+encodeURIComponent(q.value.trim());

@@ -65,7 +65,7 @@ COLLECTIONS = OrderedDict([
    intro="Names for tour operators, fishing charters, dive shops, hotels, restaurants, condo sales and real estate in Belize, including San Pedro.")),
  ("costa-rica", dict(kind="place", label="Costa Rica", f=lambda r: r["region"] == "costarica",
    h1="Costa Rica domain names, owner-direct.",
-   intro="Real estate, condo, hotel, beach, surf school, rental, restaurant and SEO names for Costa Rica, including a Spanish-language name for an SEO agency.")),
+   intro="Real estate, condo, hotel, beach, surf school, rental, restaurant and SEO names for Costa Rica, including a local-language name for an SEO agency.")),
  ("dominican-republic", dict(kind="place", label="Dominican Republic", f=lambda r: r["region"] == "dominican",
    h1="Dominican Republic domain names: Cabarete, Sosua, Puerto Plata.",
    intro="Real estate, condo, restaurant, travel and SEO names for the Dominican Republic's north coast and beyond: Cabarete, Sosua, Puerto Plata, Santo Domingo, La Romana and Higuey.")),
@@ -147,7 +147,7 @@ for st in ["Texas", "Florida", "Illinois", "Massachusetts", "Oklahoma", "Califor
 
 uses = json.load(open("_build/uses.json"))
 regions_used = OrderedDict((k, v) for k, v in REGIONS.items() if any(r["region"] == k for r in recs) and k)
-data = {"v": 1, "n": N, "built": TODAY,
+data = {"v": 1, "built": TODAY,
         "cats": {k: v[:3] for k, v in CATS.items()},
         "regions": regions_used, "places": places, "uses": uses,
         "d": [[r["d"], r["c"], r["t"], r["b"], " ".join(r["w"]), r["place"], r["parent"], r["region"]] for r in recs]}
@@ -193,21 +193,21 @@ def grid(rs): return '<div class="dgrid">' + "".join(card(r) for r in rs) + '</d
 
 
 def itemlist(path, name, rs):
-    return {"@type": "ItemList", "@id": C.SITE + path + "#list", "name": name, "numberOfItems": len(rs),
+    return {"@type": "ItemList", "@id": C.SITE + path + "#list", "name": name,
             "itemListElement": [{"@type": "ListItem", "position": i + 1, "name": r["d"]} for i, r in enumerate(rs)]}
 
 
 def hubstrip(extra=""):
-    return ('<div class="hubstrip">' + "".join(f'<a href="/domains/{v[2]}/">{esc(v[0])} <span class="n">{v[3]}</span></a>' for v in CATS.values()) + extra + '</div>')
+    return ('<div class="hubstrip">' + "".join(f'<a href="/domains/{v[2]}/">{esc(v[0])}</a>' for v in CATS.values()) + extra + '</div>')
 
 
 def placestrip():
-    return ('<div class="hubstrip">' + "".join(f'<a href="/domains/{k}/">{esc(v["label"])} <span class="n">{sum(1 for r in recs if v["f"](r))}</span></a>'
+    return ('<div class="hubstrip">' + "".join(f'<a href="/domains/{k}/">{esc(v["label"])}</a>'
                                               for k, v in COLLECTIONS.items() if v["kind"] == "place") + '</div>')
 
 
 def nichestrip():
-    return ('<div class="hubstrip">' + "".join(f'<a href="/domains/{k}/">{esc(v["label"])} <span class="n">{sum(1 for r in recs if v["f"](r))}</span></a>'
+    return ('<div class="hubstrip">' + "".join(f'<a href="/domains/{k}/">{esc(v["label"])}</a>'
                                               for k, v in COLLECTIONS.items() if v["kind"] == "niche") + '</div>')
 
 
@@ -225,14 +225,14 @@ def list_page(path, title, desc, crumbs, eyebrow, color, h1, intro, rs, uses_lis
     ecol = contrast_safe(color)
     body = (f'<section class="hero" style="padding:40px 0 22px">{HERO_BG.replace("{c}", color)}<div class="wrap">' + C.crumbs_html(crumbs) +
             f'<span class="eyebrow" style="color:{ecol}">{esc(eyebrow)}</span>\n<h1 style="font-size:clamp(2rem,5.2vw,3.2rem);max-width:22ch">{esc(h1)}</h1>\n'
-            f'<p class="lede">{intro}</p>\n<p class="hcount"><b>{len(rs)} names</b> on this page &middot; every one for sale, every price negotiable &middot; tap <b>Make an offer</b> on any card.</p>'
+            f'<p class="lede">{intro}</p>\n<p class="hcount">Every name on this page is for sale and every price is negotiable &middot; tap <b>Make an offer</b> on any card &middot; do not see the one you want? <a href="/find-it-for-me/">We can find it</a>.</p>'
             '<div class="btn-row"><a class="btn btn-p" href="/find-it-for-me/">Not sure which? Let us pick</a><a class="btn btn-s" href="tel:+18004818638">Call 1-800-481-8638</a></div>'
             '</div></section>\n<div class="wrap">' + grid(rs) + '</div>\n')
     if uses_list:
         body += ('<section class="tint"><div class="wrap"><div class="grid g2" style="align-items:start"><div class="body"><span class="eyebrow">What these get used for</span>'
                  f'<h2 class="sec-h" style="font-size:clamp(1.55rem,3.6vw,2.2rem)">Five honest uses for one of these names.</h2><ul>' + "".join(f"<li>{esc(u)}</li>" for u in uses_list) +
                  '</ul><p style="font-size:.95rem;color:var(--ink-70)">None of these are promises. They are what buyers actually do with a name once they own it, and every one depends on the business behind it.</p></div>'
-                 '<div><div class="card" style="padding:26px"><h3 style="margin-bottom:8px">Want us to shortlist for you?</h3><p>Tell us what you do and where. We will match names from this list and the rest of the portfolio, or go find one if we do not have it.</p>'
+                 '<div><div class="card" style="padding:26px"><h3 style="margin-bottom:8px">Want us to shortlist for you?</h3><p>Tell us what you do and where. We will match names from this list and the rest of the portfolio, or go find one if we do not have it. We can access almost anything and find almost anything.</p>'
                  '<div class="btn-row" style="margin-top:14px"><a class="btn btn-p" href="/find-it-for-me/">Find it for me</a></div></div></div></div></div></section>\n')
     if faqs:
         body += ('<section><div class="wrap narrow"><span class="eyebrow">Straight answers</span><h2 class="sec-h">Before you call.</h2>' + C.faq_html(faqs) +
@@ -264,8 +264,8 @@ for k, (h1, intro) in NEW_CATS.items():
     rs = [r for r in recs if r["c"] == k]
     path = f"/domains/{slug}/"
     title = f"{lab} Domain Names for Sale" if len(lab) < 34 else f"{lab.replace('Mattresses, furniture & appliances','Mattress, Furniture & Appliance')} Domains"
-    desc = f"{n} {lab.lower()} domain names for sale, owner-direct from Denver. No auction, every price negotiable. Make an offer in two taps or call 1-800-481-8638."
-    if len(desc) > 158: desc = f"{n} {lab.lower()} domain names for sale, owner-direct from Denver. No auction, every price negotiable. Make an offer in two taps."
+    desc = f"{lab} domain names for sale, owner-direct from Denver. No auction, every price negotiable. Make an offer in two taps or call 1-800-481-8638."
+    if len(desc) > 158: desc = f"{lab} domain names for sale, owner-direct from Denver. No auction, every price negotiable. Make an offer in two taps."
     others = "".join(f'<a href="/domains/{v[2]}/">{esc(v[0])}</a>' for kk, v in CATS.items() if kk != k)
     write(path, list_page(path, title, desc, [("Home", "/"), ("The domains", "/domains/"), (lab, path)], lab, col, h1, intro, rs,
                           uses[k], std_faqs(lab.lower()), '<div class="hubstrip">' + others + '</div>'))
@@ -278,7 +278,7 @@ for k, v in COLLECTIONS.items():
     lab = v["label"]
     title = (f"{lab} Domain Names for Sale" if v["kind"] == "place" else f"{lab} Domain Names for Sale")
     if len(title) > 60: title = title.replace(" for Sale", "")
-    desc = f"{len(rs)} {lab} domain names for sale, owner-direct. {('Grouped by industry. ' if v['kind']=='place' else '')}No auction, every price negotiable. Make an offer in two taps."
+    desc = f"{lab} domain names for sale, owner-direct. {('Grouped by industry. ' if v['kind']=='place' else '')}No auction, every price negotiable. Make an offer in two taps."
     if len(desc) > 158: desc = desc.replace(" Make an offer in two taps.", "")
     # group place pages by industry for scanning
     nearby = (placestrip() if v["kind"] == "place" else nichestrip())
@@ -287,18 +287,18 @@ for k, v in COLLECTIONS.items():
     write(path, page_html)
 
 # by-place hub
-bp_rows = "".join(f'<a class="card" href="/domains/{k}/"><span class="kicker">{sum(1 for r in recs if v["f"](r))} names</span><h3>{esc(v["label"])}</h3><p>{esc(v["intro"][:150].rsplit(" ",1)[0])}&hellip;</p><span class="more">See the names</span></a>'
+bp_rows = "".join(f'<a class="card" href="/domains/{k}/"><span class="kicker">Place</span><h3>{esc(v["label"])}</h3><p>{esc(v["intro"][:150].rsplit(" ",1)[0])}&hellip;</p><span class="more">See the names</span></a>'
                   for k, v in COLLECTIONS.items() if v["kind"] == "place")
-nc_rows = "".join(f'<a class="card" href="/domains/{k}/"><span class="kicker">{sum(1 for r in recs if v["f"](r))} names</span><h3>{esc(v["label"])}</h3><span class="more">See the names</span></a>'
+nc_rows = "".join(f'<a class="card" href="/domains/{k}/"><span class="kicker">Niche</span><h3>{esc(v["label"])}</h3><p>{esc(v["intro"][:110].rsplit(" ",1)[0])}&hellip;</p><span class="more">See the names</span></a>'
                   for k, v in COLLECTIONS.items() if v["kind"] == "niche")
 bp = ('<section class="hero" style="padding:40px 0 26px"><div class="wrap">' + C.crumbs_html([("Home", "/"), ("The domains", "/domains/"), ("By place", "/domains/by-place/")]) +
       '<span class="eyebrow">Browse by place &amp; niche</span><h1 style="font-size:clamp(2rem,5.2vw,3.2rem);max-width:20ch">Business domains by city, state and country.</h1>'
-      f'<p class="lede">Most of the {N} names in the portfolio are tied to a real place. Pick yours, or pick a niche below. You can also search any city on the <a href="/domains/">main finder</a>.</p></div></section>'
+      f'<p class="lede">Most names in the portfolio are tied to a real place. Pick yours, or pick a niche below. You can also search any city on the <a href="/domains/">main finder</a> &mdash; and if your city is not here, <a href="/find-it-for-me/">we can go find it</a>.</p></div></section>'
       f'<section style="padding-top:20px"><div class="wrap"><h2 class="sec-h">By place</h2><div class="grid g3">{bp_rows}</div>'
       f'<h2 class="sec-h" style="margin-top:48px">By niche</h2><div class="grid g4">{nc_rows}</div>'
       f'<h2 class="sec-h" style="margin-top:48px">By industry</h2>{hubstrip()}</div></section>' + CLOSE)
 write("/domains/by-place/", C.page("/domains/by-place/", "Business Domains by City, State and Niche",
-                                   f"Browse {N} business domains by place: Colorado, Denver, Hawaii, Belize, Costa Rica, the Dominican Republic and Omaha, or by niche.",
+                                   "Browse business domains by place: Colorado, Denver, Hawaii, Belize, Costa Rica, the Dominican Republic and Omaha, or by niche such as movers and painters.",
                                    [("Home", "/"), ("The domains", "/domains/"), ("By place", "/domains/by-place/")], bp, N))
 
 # ---------------------------------------------------------------- original 14 category pages: refresh grid + ItemList + count + contrast
@@ -308,34 +308,35 @@ for k in ORIGINAL_CATS:
     rs = [r for r in recs if r["c"] == k]
     s = re.sub(r'<div class="wrap"><div class="dgrid">.*?</div></div>\n', lambda m: '<div class="wrap">' + grid(rs) + '</div>\n', s, count=1, flags=re.S)
     s = re.sub(r'\n?<p class="hcount">.*?</p>', "", s)
-    s = re.sub(r'(<p class="lede">.*?</p>)', lambda m: m.group(1) + f'\n<p class="hcount"><b>{len(rs)} names</b> in this category &middot; tap <b>Make an offer</b> on any card, or <a href="/find-it-for-me/">let us shortlist for you</a>.</p>', s, count=1, flags=re.S)
+    s = re.sub(r'(<p class="lede">.*?</p>)', lambda m: m.group(1) + '\n<p class="hcount">Every name in this category is for sale &middot; tap <b>Make an offer</b> on any card, or <a href="/find-it-for-me/">let us shortlist for you</a> &mdash; including names we do not own yet.</p>', s, count=1, flags=re.S)
     s = re.sub(r'(<span class="eyebrow" style="color:)(#[0-9a-fA-F]{6})', lambda m: m.group(1) + contrast_safe(m.group(2)), s)
     def fix_ld(m):
         j = json.loads(m.group(1))
         for x in j["@graph"]:
             if x.get("@type") == "ItemList":
-                x["numberOfItems"] = len(rs); x["itemListElement"] = [{"@type": "ListItem", "position": i + 1, "name": r["d"]} for i, r in enumerate(rs)]
+                x.pop("numberOfItems", None); x["itemListElement"] = [{"@type": "ListItem", "position": i + 1, "name": r["d"]} for i, r in enumerate(rs)]
         return '<script type="application/ld+json">' + json.dumps(j, ensure_ascii=False, separators=(",", ":")) + '</script>'
     s = re.sub(r'<script type="application/ld\+json">(.*?)</script>', fix_ld, s, count=1, flags=re.S)
     t = f"{lab} Domain Names for Sale"
-    d = f"{len(rs)} exact-match {lab.lower()} domain names for sale, owner-direct from Denver. No auction, every price negotiable. Call 1-800-481-8638."
+    d = f"Exact-match {lab.lower()} domain names for sale, owner-direct from Denver. No auction, every price negotiable. Call 1-800-481-8638."
     s = C.set_meta(s, f"/domains/{slug}/", t, d)
     open(fn, "w").write(s)
 
 # ---------------------------------------------------------------- catalog page
-cat_opts = "".join(f'<option value="{k}">{esc(v[0])} ({v[3]})</option>' for k, v in CATS.items())
-loc_opts = '<option value="co-all">All of Colorado (%d)</option>' % sum(1 for r in recs if r["region"] in ("denver", "colorado")) + \
-           "".join(f'<option value="{k}">{esc(v)} ({sum(1 for r in recs if r["region"] == k)})</option>' for k, v in regions_used.items())
+cat_opts = "".join(f'<option value="{k}">{esc(v[0])}</option>' for k, v in CATS.items())
+loc_opts = '<option value="co-all">All of Colorado</option>' + \
+           "".join(f'<option value="{k}">{esc(v)}</option>' for k, v in regions_used.items())
 POP = ["dentist", "denver", "walk in tub", "hawaii", "belize", "fence omaha", "ai agent", "glp-1", "movers", "real estate costa rica"]
 catalog_main = (
  '<section class="hero" style="padding:34px 0 18px">' + HERO_BG.replace("{c}", "#4c35e8") + '<div class="wrap">' +
  C.crumbs_html([("Home", "/"), ("The domains", "/domains/")]) +
- '<span class="eyebrow">The whole portfolio</span>\n<h1 style="font-size:clamp(2rem,5.4vw,3.4rem);max-width:19ch">Every name we own, in one place.</h1>\n'
- f'<p class="lede">Sorted by trade, tagged by what each name actually is, and searchable by anything &mdash; a city, a service, a word you half remember. All {N} are for sale. Nothing here has a price tag on it, because every one of them is negotiable and quoted by conversation.</p>\n'
+ '<span class="eyebrow">Browse domains</span>\n<h1 style="font-size:clamp(2rem,5.4vw,3.4rem);max-width:19ch">Find your business domain.</h1>\n'
+ '<p class="lede">Search by anything &mdash; a city, a service, a word you half remember. Every name here is for sale and negotiable, quoted by a person rather than a price tag. Not here? That is where we shine: we can access almost anything and find almost anything, from the low-hanging fruit to the hidden gems. <a href="/find-it-for-me/">Tell us what you need</a>.</p>\n'
+ '<p class="jump"><a href="#browse-cats">Browse by category</a><a href="/domains/by-place/">Browse by city &amp; state</a><a href="/find-it-for-me/">Have us find one</a></p>\n'
  '</div></section>\n'
  '<div class="finder" id="finder-app"><div class="wrap">\n'
  '<form class="frow" id="finder-form" role="search" action="/domains/" method="get"><div class="fsearch">'
- f'<label class="vh" for="srch">Search {N} domains</label><input id="srch" name="q" type="search" placeholder="Try dentist, denver, walk-in tub, hawaii, fence omaha…" autocomplete="off" enterkeyhint="search">'
+ '<label class="vh" for="srch">Search business domains</label><input id="srch" name="q" type="search" placeholder="Try dentist, denver, walk-in tub, hawaii, fence omaha…" autocomplete="off" enterkeyhint="search">'
  '<button type="submit">Search</button></div></form>\n'
  '<div class="fsel">'
  f'<label>Industry<select id="f-cat"><option value="">All industries</option>{cat_opts}</select></label>'
@@ -343,7 +344,7 @@ catalog_main = (
  '<label>Type<select id="f-type"><option value="">Bare &amp; developed</option><option value="dev">Developed (live site)</option><option value="bare">Bare names only</option></select></label>'
  '<label>Extension<select id="f-tld"><option value="">Any extension</option><option value="com">.com only</option><option value="other">Other extensions</option></select></label>'
  '<label>Sort<select id="f-sort"><option value="rel">Best match</option><option value="short">Shortest first</option><option value="az">A to Z</option><option value="cat">By industry</option></select></label>'
- '</div>\n<div class="fmeta"><span id="tally" aria-live="polite">All %d names</span><p id="qhint" hidden></p><button class="chip" id="clr" type="button">Clear all</button></div>\n' % N +
+ '</div>\n<div class="fmeta"><span id="tally" aria-live="polite">Showing the full portfolio</span><p id="qhint" hidden></p><button class="chip" id="clr" type="button">Clear all</button></div>\n' +
  '<div class="chips" id="tagchips" role="group" aria-label="Filter by tag">' +
  "".join(f'<button class="chip" type="button" aria-pressed="false" data-tag="{t}">{n}</button>' for t, n in [("P", "Premium"), ("C", "Category killer"), ("X", "Defensive pair"), ("B", "Brandable"), ("I", "International"), ("S", "Say-it-once")]) +
  '</div>\n<div class="popq"><span>Popular:</span>' + "".join(f'<button type="button" data-q="{esc(q)}">{esc(q)}</button>' for q in POP) + '</div>\n'
@@ -353,13 +354,13 @@ catalog_main = (
  '<p>That is not the end of it. Tell us what your business does and where, and we will check our names, the open market and whether it is simply available to register.</p>'
  '<div class="btn-row" style="justify-content:center"><a class="btn btn-p" id="empty-cta" href="/find-it-for-me/">Find it for me</a><a class="btn btn-s" href="/register-a-domain/">Check if it is available</a></div></div>\n'
  '</div>\n' + TAGSEC + '\n'
- '<section><div class="wrap"><span class="eyebrow">By trade</span><h2 class="sec-h">Browse a category instead.</h2>'
+ '<section id="browse-cats"><div class="wrap"><span class="eyebrow">By trade</span><h2 class="sec-h">Browse a category instead.</h2>'
  '<p class="lede">Every category has its own page with the full list and what those names tend to get used for.</p>' + hubstrip() +
  '<h2 class="sec-h" style="margin-top:40px;font-size:clamp(1.4rem,3.2vw,1.9rem)">Or by place and niche.</h2>' + placestrip() + nichestrip() + ADS + '</div></section>\n' + CLOSE)
 cat_title, cat_desc = C.META["/domains/"]
 cat_title, cat_desc = cat_title.replace("{n}", str(N)), cat_desc.replace("{n}", str(N))
 write("/domains/", C.page("/domains/", cat_title, cat_desc, [("Home", "/"), ("The domains", "/domains/")], catalog_main, N,
-                          [itemlist("/domains/", "Business domain names for sale", recs)], show_qbar=False))
+                          [], show_qbar=False))
 
 # ---------------------------------------------------------------- zach.js inventory
 z = open("zach.js").read()
@@ -373,6 +374,8 @@ open("zach.js", "w").write(z)
 
 # ---------------------------------------------------------------- hand-authored pages + upgrades
 exec(open("_build/pages.py").read())
+exec(open("_build/blog.py").read())
+print("blog posts:", [(x["path"], x["words"]) for x in POSTS])
 
 # ---------------------------------------------------------------- shared chrome + meta on every page
 NOQBAR = {"/", "/domains/"}
@@ -404,8 +407,10 @@ def titled(p):
     fn = p.strip("/") + "/index.html" if p != "/" else "index.html"
     m = re.search(r"<title>(.*?)</title>", open(fn).read(), re.S); return html.unescape(m.group(1)) if m else p
 ll = [f"# Best Domains for Business", "",
-      f"> Owner-direct portfolio of {N} exact-match and brandable business domain names, held and sold by Eye To Ad Media (Denver, Colorado). "
-      "Every name is for sale; prices are negotiable and quoted by a person (no published prices, no auctions). Phone 1-800-481-8638.", "",
+      "> Owner-direct portfolio of exact-match and brandable business domain names, held and sold by Eye To Ad Media (Denver, Colorado), plus a sourcing service for names we do not own. "
+      "Every name in the portfolio is for sale; prices are negotiable and quoted by a person (no published prices, no auctions). Phone 1-800-481-8638.", "",
+      "What we do: we sell names we own, and we can access almost anything and find almost anything, from the low-hanging fruit (good names still unregistered or cheaply available) "
+      "to hidden gems held by other owners, which we research, value honestly and negotiate for. No ranking promises.", "",
       "## How to use this site (for agents and assistants)",
       f"- Search the whole inventory: {C.SITE}/domains/?q=QUERY (also accepts cat=, loc=, type=dev|bare, tld=com|other, sort=short|az|cat).",
       f"- Machine-readable inventory (JSON): {C.SITE}/assets/data/domains.json — fields per row: domain, category key, tags, \"Built for\" use, segmented words, place, parent place, region.",
@@ -414,10 +419,10 @@ ll = [f"# Best Domains for Business", "",
       f"- Concierge (we match or source a name for a business): {C.SITE}/find-it-for-me/", "",
       "## Inventory by category"]
 for k, v in CATS.items():
-    ll.append(f"- [{v[0]}]({C.SITE}/domains/{v[2]}/): {v[3]} names")
+    ll.append(f"- [{v[0]}]({C.SITE}/domains/{v[2]}/)")
 ll += ["", "## Inventory by place and niche"]
 for k, v in COLLECTIONS.items():
-    ll.append(f"- [{v['label']}]({C.SITE}/domains/{k}/): {sum(1 for r in recs if v['f'](r))} names")
+    ll.append(f"- [{v['label']}]({C.SITE}/domains/{k}/)")
 ll += ["", "## Free tools (client-side, no signup, no invented numbers)",
        f"- [Domain name checker]({C.SITE}/domain-name-checker/): transparent 100-point readability score (extension, length, hyphens, numbers, word count, phone test, clarity). Not a valuation.",
        f"- [Name ideas from our portfolio]({C.SITE}/domain-name-ideas/): suggests only real names we own and explains the fit.",
@@ -434,9 +439,10 @@ ll += ["", "## Facts and policies",
        "- No ranking, traffic or AI-citation guarantees. Keywords in a domain do not earn a Google ranking on their own.",
        "- Acquisition of names owned by others: $1,500 engagement fee, then 15% of the purchase price on close (15% or $1,500, whichever is greater). See /find-a-domain/.",
        "- After payment clears, the buyer receives the authorization code the same business day; registrars control transfer timing.",
+       "- Language: English. Questions are answered by email or phone by a real person.",
        f"- Inventory last rebuilt: {TODAY}.", ""]
 open("llms.txt", "w").write("\n".join(ll))
 
-print("records", N, "pages", len(pages))
+print("records", N, "pages", len(pages), "(internal only; never publish this count)")
 print({k: v[3] for k, v in CATS.items()})
 print({k: sum(1 for r in recs if v["f"](r)) for k, v in COLLECTIONS.items()})

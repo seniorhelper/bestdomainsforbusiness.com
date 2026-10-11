@@ -46,10 +46,10 @@ noncom = [r["d"] for r in recs if r["tld"] != "com"]
 
 # ============================================================== /find-it-for-me/
 tool_page("/find-it-for-me/", "Find the Perfect Domain for Your Business",
-          f"Tell us what your business does and where. We match names from our {N}-domain portfolio instantly, then a person finds the best fit for your budget.",
+          "Tell us your business and where. We match names from our portfolio instantly, and source names we do not own. A real person finds the best fit for your budget.",
           [("Home", "/"), ("Find it for me", "/find-it-for-me/")], "Domain concierge &middot; free to ask",
           "Tell us your business. We will find the name.",
-          f"Answer four quick questions. Names from our {N}-domain portfolio that fit appear as you type &mdash; tap any you like. Then a real person checks the rest of the portfolio, whether a good name is simply available to register, and what it would take to buy one somebody else owns.",
+          "We can access almost anything and find almost anything. Answer four quick questions and matching names from our portfolio appear as you type &mdash; tap any you like. Then a real person goes further: the rest of the portfolio, the low-hanging fruit (good names still available to register) and the hidden gems somebody else owns, with what it would take to buy one.",
           '<section style="padding-top:10px"><div class="wrap">' + concierge("ff") + '</div></section>'
           '<section class="tint"><div class="wrap"><span class="eyebrow">What happens next</span><h2 class="sec-h">Cheapest good outcome first. Always.</h2>'
           '<div class="next3"><div><b>1 &middot; Within a business day</b><p>A person reads your request and replies with names that fit, from our portfolio and beyond.</p></div>'
@@ -182,10 +182,10 @@ f.addEventListener("submit",run);
 });
 </script>'''
 tool_page("/domain-name-ideas/", "Business Domain Name Ideas From Real Inventory",
-          f"Describe your business and get domain ideas drawn only from the {N} names we actually own, with a plain reason each one fits. No made-up suggestions.",
+          "Describe your business and get domain ideas drawn only from names we actually own, with a plain reason each one fits. No made-up suggestions.",
           [("Home", "/"), ("Free tools", "/guides/"), ("Name ideas", "/domain-name-ideas/")], "Free tool &middot; real names only",
           "Domain name ideas you can actually buy.",
-          f"Most name generators invent names that are taken or worthless. This one only suggests names from our {N}-domain portfolio &mdash; every result exists, is for sale, and comes with the reason it fits.",
+          "Most name generators invent names that are taken or worthless. This one only suggests names from our own portfolio &mdash; every result exists, is for sale, and comes with the reason it fits. Nothing right? <a href=\"/find-it-for-me/\">We will go find it</a>.",
           '<section style="padding-top:10px"><div class="wrap"><form class="tool" id="id-form"><div class="f2">'
           '<div class="field"><label for="id-svc">What does the business do?</label><input id="id-svc" placeholder="dentist, fence company, dive shop…" required autocomplete="off"></div>'
           '<div class="field"><label for="id-city">Where? <span class="opt">optional</span></label><input id="id-city" placeholder="Denver, Omaha, Oahu…" autocomplete="off"></div></div>'
@@ -343,7 +343,7 @@ guide("com-vs-other-extensions", "Should Your Business Domain Be a .com?",
        ("when", "When a non-.com is the right call",
         "<ul><li>You serve one country and its country code is what locals expect.</li><li>The .com is unaffordable, and you also control or can live with who owns it.</li>"
         "<li>It is a campaign or product name where the extension is part of the brand.</li><li>You are a nonprofit (.org) or a tech product where .io or .ai is the norm in your field.</li></ul>"
-        f"<p>Of the {N} names in our portfolio, {N - len(noncom)} are .com. The others are {', '.join(noncom)}.</p>"),
+        f"<p>Nearly every name in our portfolio is a .com, for exactly these reasons. The exceptions are deliberate: {', '.join(noncom)}.</p>"),
        ("test", "Quick test before you decide",
         "<p>Say the full name, extension included, to someone who has never heard it and ask them to type it. If they type .com instead, you have your answer. Our <a href=\"/domain-name-checker/\">domain name checker</a> scores the extension along with length, hyphens and the phone test, and shows every rule.</p>")],
       [("Is .com better for SEO?", "Not by itself. Google treats generic extensions alike; the advantage of .com is human habit and less leakage to someone else's site."),
@@ -407,8 +407,8 @@ def edit(fn, fnc):
 POPQ = ["dentist", "denver", "walk in tub", "hawaii", "belize", "fence omaha", "ai agent", "glp-1"]
 def home(s):
     hero = ('<div class="hfind" id="hero-finder"><!--hf--><form class="bigsearch" action="/domains/" method="get" role="search">'
-            f'<label class="vh" for="hq">Search {N} business domains</label><input id="hq" type="search" name="q" placeholder="What does your business do? Try dentist, denver…" autocomplete="off" enterkeyhint="search"><button type="submit">Search</button></form>'
-            f'<p class="hcount"><b>{N} names</b> across {ncats} industries &mdash; search by service, city or state. Typos are fine.</p>'
+            '<label class="vh" for="hq">Search business domains</label><input id="hq" type="search" name="q" placeholder="What does your business do? Try dentist, denver…" autocomplete="off" enterkeyhint="search"><button type="submit">Search</button></form>'
+            f'<p class="hcount">Search by service, city or state across {ncats} industries. Typos are fine. Not here? <a href="/find-it-for-me/">We can find almost anything.</a></p>'
             '<div class="popq"><span>Try:</span>' + "".join(f'<button type="button" data-q="{q}">{q}</button>' for q in POPQ) + '</div>'
             '<div class="hres" aria-live="polite" hidden></div><a class="hall" href="/domains/" hidden>See all</a><!--/hf--></div>')
     s = re.sub(r'<form class="bigsearch" action="/domains/" method="get" role="search" style="margin-top:28px">.*?</form>', lambda m: hero, s, count=1, flags=re.S)
@@ -430,6 +430,28 @@ def home(s):
         s = re.sub(r'<h2 class="sec-h">[^<]*</h2>\n<!--hubs-->.*?<!--/hubs-->', lambda m: hubs, s, count=1, flags=re.S)
     else:
         s = re.sub(r'<h2 class="sec-h">\w+ categories\. Start where your business lives\.</h2>\n<div class="hubstrip">.*?</div>', lambda m: hubs, s, count=1, flags=re.S)
+    s = s.replace('<p class="lede">Hundreds of exact-match keyword domains for home services, real estate, travel, health and the professional trades &mdash; held and sold by one owner. No auction. No bidding war. A phone number and a person on the other end of it.</p>',
+                  '<p class="lede">A deep portfolio of exact-match business domains for home services, real estate, travel, health and the professional trades &mdash; and the reach to find the ones we do not own. We can access almost anything and find almost anything. Experts at the low-hanging fruit and at finding hidden gems that take your brand to new heights.</p>')
+    s = s.replace('<h3>Hundreds of names, one owner</h3>', '<h3>A deep portfolio, one owner</h3>')
+    s = s.replace('<a class="btn btn-p" href="/domains/">See every name we own</a>', '<a class="btn btn-p" href="/domains/">Browse all domains</a>')
+    # new "reach" section, placed right after the three-paths section
+    reach = ('<!--reach--><section style="padding-top:0"><div class="wrap"><div class="grid g2" style="align-items:center;gap:36px"><div class="body">'
+             '<span class="eyebrow">Low-hanging fruit &amp; hidden gems</span><h2 class="sec-h">If the right name exists, we can usually get to it.</h2>'
+             '<p>Our own portfolio is only the first place we look. When it does not have your name, we keep going: names that are still unregistered (the low-hanging fruit, and the cheapest win), names sitting unused at other owners, and the hidden gems a search box will never show you.</p>'
+             '<p>We research who owns a name, tell you honestly what it is worth to <em>your</em> business, and negotiate for it if it makes sense. No ranking promises and no invented numbers &mdash; just a person who does this every day.</p>'
+             '<div class="btn-row"><a class="btn btn-p" href="/find-it-for-me/">Find it for me</a><a class="btn btn-s" href="/domains/">Browse domains</a></div></div>'
+             '<div class="card" style="padding:26px"><h3 style="margin-bottom:10px">Where we look, in order</h3><ol class="numlist" style="padding:0;margin:0">'
+             '<li><h3>Our portfolio</h3><p>Names we own outright. Fastest and simplest.</p></li>'
+             '<li><h3>The open register</h3><p>If a strong name is unregistered, we tell you to register it yourself.</p></li>'
+             '<li><h3>Other owners</h3><p>Parked, unused or forgotten names, researched and approached on your behalf.</p></li>'
+             '<li><h3>Your shortlist</h3><p>The best options for your budget, explained in plain English.</p></li></ol></div></div></div></section><!--/reach-->')
+    if "<!--reach-->" in s:
+        s = re.sub(r'<!--reach-->.*?<!--/reach-->', lambda m: reach, s, count=1, flags=re.S)
+    else:
+        i = s.find('<span class="kicker">Register it new</span>')
+        j = s.find('</section>', i)
+        if i > -1 and j > -1:
+            s = s[:j + len('</section>')] + "\n" + reach + s[j + len('</section>'):]
     s = s.replace('<span class="creds-i"><b>A+</b><span>BBB accredited</span></span>', '<span class="creds-i"><b>A+</b><span>BBB accredited (Eye To Ad Media)</span></span>')
     return s
 edit("index.html", home)
