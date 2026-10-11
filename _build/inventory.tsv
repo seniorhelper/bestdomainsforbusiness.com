@@ -1,5 +1,6 @@
 # domain	category	tags	blurb  (source of truth; run python3 _build/build.py after editing)
 # NOT FOR SALE (owner 2026-10-11): zacharytyewennstedt.com — owned, deliberately excluded from this inventory
+# NOT LISTED (owner 2026-10-11): businessdirectorynow.com, owner does not believe he owns it, although it appeared in his Oct 10 list. Re-add only if he confirms ownership.
 24-7answeringservice.com	prof	PE	Built for an answering service.
 acreageforsaleincolorado.com	realestate	PGE	Built for a land and acreage broker in Colorado.
 actionglobalnews.com	events	PDES	Built for a news publication.
@@ -163,7 +164,6 @@ brightontires.com	auto	PXGES	Built for a tire shop in Brighton.
 brightontireshop.com	auto	PGES	Built for a tire shop in Brighton.
 brightonwaxing.com	health	PGES	Built for a waxing studio in Brighton.
 businesscardtap.com	marketing	PBS	Built for an NFC business card brand.
-businessdirectorynow.com	marketing	PCE	Built for a business listing and directory platform.
 businessdomainforsale.com	marketing	PCE	Built for a domain brokerage.
 buyappliancesnearme.com	home	PES	Built for an appliance retailer.
 buyboatnearme.com	auto	PES	Built for a boat dealer.
