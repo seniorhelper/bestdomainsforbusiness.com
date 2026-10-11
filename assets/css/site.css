@@ -492,3 +492,37 @@ html.noscroll #zbx{display:none!important}
 #tally{white-space:normal;min-width:0}
 .drop>button{white-space:nowrap}
 @media(max-width:1180px){.hdr-nav{padding-bottom:120px}}
+/*v3*/
+.devjump{display:flex;flex-wrap:wrap;gap:8px;margin:6px 0 10px}
+.devjump a{border:1px solid var(--line);background:#fff;border-radius:999px;padding:8px 14px;font-size:.88rem;font-weight:600;color:var(--ink);text-decoration:none}
+.devjump a:hover{border-color:var(--ink)}
+.devh{font-family:Fraunces,Georgia,serif;font-size:1.45rem;margin:38px 0 14px;scroll-margin-top:150px}
+.dlive{text-decoration:none;display:inline-flex;align-items:center}
+@media(max-width:1180px){
+ .hdr-nav .drop>button{pointer-events:none;font-family:var(--f-mono,inherit);font-size:.74rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-50);border-bottom:0;padding:18px 4px 4px}
+ .hdr-nav .drop>button svg{display:none}
+ .hdr-nav .drop-menu{display:flex;padding:0 0 6px}
+ .hdr-nav .drop-menu a{border-bottom:1px solid var(--line);padding:11px 4px}
+ body.nav-open #zbx,body.nav-open .zbx-tab{display:none!important}
+}
+
+/* v3 restyle: navy hero band, gold accents. Light cards inside the hero keep dark text. */
+.hero{background:radial-gradient(1100px 520px at 88% -14%,rgba(76,53,232,.62),transparent 62%),radial-gradient(900px 520px at -8% 115%,rgba(245,167,0,.24),transparent 60%),linear-gradient(180deg,#17143a 0%,#141230 100%);color:#fff;border-bottom:0}
+.hero .hero-bg{display:none}
+.hero :is(h1,h2,h3):not(:is(.card,.tool,.dcard,.qdrop) *){color:#fff}
+.hero p:not(:is(.card,.tool,.dcard,.qdrop) *){color:rgba(255,255,255,.84)}
+.hero a:not(.btn):not(.jump a):not(:is(.card,.tool,.dcard,.qdrop,.popq) *){color:#ffd479}
+.hero .eyebrow:not(:is(.card,.tool,.dcard) *){color:#ffd479!important}
+.hero .crumbs,.hero .crumbs a{color:rgba(255,255,255,.66)!important}
+.hero .crumbs a:hover{color:#fff!important}
+.hero .hcount b{color:#fff}
+.hero .popq span{color:rgba(255,255,255,.75)}
+.hero-badge{background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.2);color:rgba(255,255,255,.9)}
+.hero .btn-p:not(:is(.card,.tool) *){background:#f5a700;color:#141230}.hero .btn-p:not(:is(.card,.tool) *):hover{background:#ffc93d;color:#141230}
+.hero .btn-s:not(:is(.card,.tool) *){background:transparent;color:#fff;border-color:rgba(255,255,255,.45)}.hero .btn-s:not(:is(.card,.tool) *):hover{border-color:#fff;color:#fff}
+.hero .bigsearch{border-color:#f5a700;box-shadow:0 0 0 6px rgba(245,167,0,.16),0 22px 50px rgba(0,0,0,.35)}
+.hero .bigsearch button{background:#f5a700;color:#141230}
+.hero .card{color:var(--ink)}
+.dcard{box-shadow:0 1px 0 rgba(20,18,48,.04),0 8px 22px rgba(20,18,48,.05)}
+.sec-h{letter-spacing:-.01em}
+/*/v3*/
