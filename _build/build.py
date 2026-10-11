@@ -377,6 +377,39 @@ exec(open("_build/pages.py").read())
 exec(open("_build/blog.py").read())
 print("blog posts:", [(x["path"], x["words"]) for x in POSTS])
 
+# ---------------------------------------------------------------- developed assets: regenerated from inventory (D tag = verified live site)
+DEV = [r for r in recs if "D" in r["t"]]
+FEATURED = ["eyetoad.com", "usabusinesssearch.com", "pressreleaseforbusiness.com", "allofus.one",
+            "cobusinesslist.com", "worldvrmall.com", "bestshowerkit.com", "linkrestaurants.com"]
+def devcard(r):
+    tags = "".join(f'<span class="tag t-{t}">{TAGNAMES[t]}</span>' for t in r["t"] if t in TAGNAMES)
+    dq = esc(r["d"])
+    return (f'<article class="dcard k-{r["c"]}"><span class="dn">{esc(r["sld"])}<span class="tld">.{esc(r["tld"])}</span></span>'
+            f'<p class="du">Built for {esc(r["b"])}</p><p class="dt">{tags}</p>'
+            f'<div class="dact"><a class="dask" href="/contact/?d={dq}">Make an offer</a>'
+            f'<a class="dmore dlive" href="https://{dq}/" target="_blank" rel="noopener">See live site &#8599;</a></div></article>')
+def cube(r):
+    lab = CATS[r["c"]][0]; col = CATS[r["c"]][1]
+    return (f'<a class="cw" href="https://{esc(r["d"])}/" target="_blank" rel="noopener" style="--h:{col}" aria-label="{esc(r["d"])} (opens live site)"><span class="cube spin">'
+            f'<span class="f front">{esc(r["sld"])}<span style="color:var(--ink-50)">.{esc(r["tld"])}</span></span><span class="f back">{esc(lab)}</span>'
+            f'<span class="f right">Built for {esc(r["b"])}</span><span class="f left">Live site</span><span class="f top"></span><span class="f bottom"></span></span>'
+            f'<span class="lbl">{esc(r["sld"])}<span class="tld" style="color:var(--ink-50)">.{esc(r["tld"])}</span><em>{esc(lab)}</em><span class="spotpill">Developed</span></span></a>')
+_by = {r["d"]: r for r in DEV}
+_cubes = "".join(cube(_by[d]) for d in FEATURED if d in _by)
+_groups = [(k, [r for r in DEV if r["c"] == k]) for k in CATS]
+_groups = [(k, rs) for k, rs in _groups if rs]
+_jump = '<p class="devjump">' + "".join(f'<a href="#dev-{CATS[k][2]}">{esc(CATS[k][0])}</a>' for k, rs in _groups) + '</p>'
+_list = ('<div class="wrap">' + _jump + "".join(
+    f'<h3 class="devh" id="dev-{CATS[k][2]}">{esc(CATS[k][0])}</h3><div class="dgrid">' + "".join(devcard(r) for r in rs) + '</div>'
+    for k, rs in _groups) + '</div>\n')
+fn = "developed-assets/index.html"; s = open(fn).read()
+s = re.sub(r'<div class="cubes">.*?</a></div>', lambda m: '<div class="cubes">' + _cubes + '</div>', s, count=1, flags=re.S)
+s = re.sub(r'<div class="wrap">(?:<p class="devjump">|<div class="dgrid">).*?\n(?=<section class="tint">)', lambda m: _list, s, count=1, flags=re.S)
+s = s.replace('<span class="eyebrow">Eight of them, up close</span>', '<span class="eyebrow">A few of them, up close</span>')
+s = s.replace('<h2 class="sec-h">The rest of them, in a list.</h2>', '<h2 class="sec-h">Every developed name, by industry.</h2><p class="lede" style="margin-top:8px">Each one is a working site you can open and look at before you call. Tap <b>See live site</b>, then <b>Make an offer</b> on the one that fits.</p>')
+open(fn, "w").write(s)
+assert s.count('class="dcard') == len(DEV), "developed grid did not regenerate"
+
 # ---------------------------------------------------------------- shared chrome + meta on every page
 NOQBAR = {"/", "/domains/"}
 for fn in sorted(glob.glob("**/index.html", recursive=True)):
@@ -384,6 +417,14 @@ for fn in sorted(glob.glob("**/index.html", recursive=True)):
     path = "/" + fn[:-len("index.html")]
     s = open(fn).read()
     s = C.apply_chrome(s, path, N, show_qbar=path not in NOQBAR)
+    # cube faces: break long names only at word boundaries (no "conversationalaib / ot")
+    def _wbr(m):
+        sld = m.group(2).replace("<wbr>", "")
+        parts = []
+        for chunk in sld.split("-"):
+            parts.append("<wbr>".join(words_for(chunk + ".com")))
+        return m.group(1) + "-<wbr>".join(parts) + m.group(3)
+    s = re.sub(r'(<span class="f front">)([a-z0-9<>wbr-]+?)(<span)', _wbr, s)
     if path in C.META:
         t, d = C.META[path]; s = C.set_meta(s, path, t.replace("{n}", str(N)), d.replace("{n}", str(N)))
     open(fn, "w").write(s)

@@ -4,7 +4,7 @@ existing hand-written pages in sync with the shared chrome."""
 import re, json, html
 
 SITE = "https://bestdomainsforbusiness.com"
-VER = "20261011"
+VER = "20261011c"
 TEL = "1-800-481-8638"
 
 BBB = ('<a class="bbb" href="https://www.bbb.org/us/co/denver/profile/advertising-agencies/search-converts-llc-1296-90228702/#sealclick" '
@@ -78,9 +78,9 @@ def header(path):
             + top("/domains/", "Browse domains", "nav-browse") + top("/find-it-for-me/", "Find it for me", "nav-find") + "\n" + shortcuts + "\n"
             + top("/buy-a-domain/", "How buying works")
             + f'\n<span class="drop" data-drop><button type="button" aria-expanded="false">Free tools {CHEV}</button><span class="drop-menu">{_menu(TOOLS_MENU, path)}</span></span>'
-            + top("/guides/", "Guides", "mob-only") + top("/blog/", "Blog")
+            + top("/blog/", "Blog")
             + f'\n<span class="drop" data-drop><button type="button" aria-expanded="false">More {CHEV}</button><span class="drop-menu">{_menu(MORE_MENU, path)}</span></span>\n'
-            + top("/sell-your-domain/", "Sell your domain", "mob-only") + top("/contact/", "Contact")
+            + top("/contact/", "Contact")
             + f'\n<a class="hdr-tel" href="tel:+18004818638">{TEL}</a></nav></div></header>')
 
 

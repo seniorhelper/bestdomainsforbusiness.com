@@ -1,26 +1,26 @@
 # domain	category	tags	blurb  (source of truth; run python3 _build/build.py after editing)
+# NOT FOR SALE (owner 2026-10-11): zacharytyewennstedt.com — owned, deliberately excluded from this inventory
 24-7answeringservice.com	prof	PE	Built for an answering service.
 acreageforsaleincolorado.com	realestate	PGE	Built for a land and acreage broker in Colorado.
 actionglobalnews.com	events	PDES	Built for a news publication.
-advertisecastlerock.com	marketing	PGES	Built for an advertising agency in Castle Rock.
+advertisecastlerock.com	marketing	PDGES	Built for an advertising agency in Castle Rock.
 advertisingforcontractors.com	marketing	PDE	Built for an advertising agency.
 advertisingforrestaurant.com	marketing	PDE	Built for an agency selling advertising to restaurants.
-affordabledenverseo.com	marketing	PGES	Built for an SEO agency in the Denver metro.
-agenciaseoencostarica.com	marketing	PIGE	Built for an SEO agency in Costa Rica.
-agenticsseo.com	marketing	ES	Built for an AI automation consultancy.
-agingsafelybaths.com	bath	PDES	Built for an accessibility bath and walk-in tub company.
+affordabledenverseo.com	marketing	PDGES	Built for an SEO agency in the Denver metro.
+agenciaseoencostarica.com	marketing	PDIGE	Built for an SEO agency in Costa Rica.
+agenticsseo.com	marketing	DES	Built for an AI automation consultancy.
 aiagentdenver.com	ai	PXGES	Built for an AI agent consultancy in the Denver metro.
-aiagentforadvertising.com	ai	PE	Built for an AI agent service for advertising.
+aiagentforadvertising.com	ai	PDE	Built for an AI agent service for advertising.
 aiagentforseo.com	ai	PES	Built for an AI agent service for SEO.
 aiagentsadvertising.com	ai	PE	Built for an AI agent service for advertising.
 aiagentsdenver.com	ai	PXGES	Built for an AI agent consultancy in the Denver metro.
 aiagentsforaccounting.com	ai	PE	Built for an AI agent service for accounting firms.
-ailifeboard.com	ai	BS	Built for a brandable AI product.
-aiodenver.com	marketing	PGES	Built for an AI optimization agency in the Denver metro.
+ailifeboard.com	ai	DBS	Built for a brandable AI product.
+aiodenver.com	marketing	PDGES	Built for an AI optimization agency in the Denver metro.
 allinclusivemauiresorts.com	travel	PGE	Built for a resort or booking site on Maui.
 allinclusiveresortshawaii.com	travel	PGE	Built for a resort or booking site in Hawaii.
 allinclusiveresortsoahu.com	travel	PGE	Built for a resort or booking site on Oahu.
-allofus.one	events	BS	Built for a community project.
+allofus.one	events	DBS	Built for a social network and community platform.
 allofuscoin.com	events	BS	Built for a community project.
 anotherdimensionvr.com	vr	PDBS	Built for a VR studio or immersive experience brand.
 answeringservicesforbusiness.com	prof	PCE	Built for an answering service.
@@ -32,7 +32,7 @@ appliancesdenver.com	home	PGES	Built for an appliance store in the Denver metro.
 attorneygreeleyco.com	legal	PGES	Built for an attorney in Greeley.
 attractionhawaii.com	travel	PGES	Built for an attractions and tours operator in Hawaii.
 attractionsdenver.com	travel	PGES	Built for an attractions and tours operator in the Denver metro.
-attractionsoahu.com	travel	PGES	Built for an attractions and tours operator on Oahu.
+attractionsoahu.com	travel	PDGES	Built for an attractions and tours operator on Oahu.
 auroradeckbuilder.com	trades	PXGES	Built for a deck builder in Aurora.
 auroradeckbuilders.com	trades	PXGES	Built for a deck builder in Aurora.
 autodetailomahane.com	auto	PGES	Built for a mobile detailing service in Omaha.
@@ -48,20 +48,20 @@ bathtubs4less.com	bath	PCE	Built for a bath and shower remodeling company.
 bedlinersfortrucks.com	auto	PES	Built for a truck bed liner installer.
 bedsdenver.com	home	PGES	Built for a bed and mattress retailer in the Denver metro.
 belize-seo.com	marketing	PGE	Built for an SEO agency in Belize.
-belizeadvertising.com	marketing	PGES	Built for an advertising agency in Belize.
-belizecondosforrent.com	realestate	PGES	Built for a condo sales agent in Belize.
-belizefishingcharter.com	travel	PGE	Built for a fishing charter or guide in Belize.
+belizeadvertising.com	marketing	PDGES	Built for an advertising agency in Belize.
+belizecondosforrent.com	realestate	PDGES	Built for a condo rental guide in Belize.
+belizefishingcharter.com	travel	PDGE	Built for a fishing charter or guide in Belize.
 belizeislandexpeditions.com	travel	PGE	Built for an island tour operator in Belize.
-belizemonthlyrentals.com	travel	PGE	Built for a rental manager in Belize.
-belizerestaurantsguide.com	food	PGE	Built for a restaurant guide in Belize.
-belizeseoagency.com	marketing	PGES	Built for an SEO agency in Belize.
+belizemonthlyrentals.com	travel	PDGE	Built for a rental manager in Belize.
+belizerestaurantsguide.com	food	PDGE	Built for a restaurant guide in Belize.
+belizeseoagency.com	marketing	PDGES	Built for an SEO agency in Belize.
 belizetourspackages.com	travel	PGES	Built for a tour operator in Belize.
 bestaiagentforbusiness.com	ai	PCE	Built for an AI agent consultancy.
 bestansweringservices.com	prof	PCE	Built for an answering service.
 bestappdesigners.com	marketing	PCES	Built for a mobile app design studio.
-bestbeacheshawaii.com	travel	PGES	Built for a beach guide in Hawaii.
-bestbeachesincostarica.com	travel	PGE	Built for a beach guide in Costa Rica.
-bestbelizeadventures.com	travel	PGE	Built for an adventure tour operator in Belize.
+bestbeacheshawaii.com	travel	PDGES	Built for a beach guide in Hawaii.
+bestbeachesincostarica.com	travel	PDGE	Built for a beach guide in Costa Rica.
+bestbelizeadventures.com	travel	PDGE	Built for an adventure tour operator in Belize.
 bestbrandranker.com	marketing	BS	Built for a brand visibility agency.
 bestcarpetcleaningcompanydenver.com	cleanmove	PGE	Built for a carpet cleaning company in the Denver metro.
 bestcarpetcleaningdenver.com	cleanmove	PGE	Built for a carpet cleaning company in the Denver metro.
@@ -75,10 +75,10 @@ bestdenverhotel.com	travel	PGES	Built for a hotel or booking site in the Denver 
 bestdenvermassages.com	health	PGES	Built for a massage practice in the Denver metro.
 bestdenvermover.com	cleanmove	PGES	Built for a moving company in the Denver metro.
 bestdenvermovingcompany.com	cleanmove	PGE	Built for a moving company in the Denver metro.
-bestdivinghawaii.com	travel	PGES	Built for a dive operator in Hawaii.
+bestdivinghawaii.com	travel	PDGES	Built for a dive operator in Hawaii.
 bestdivinginhawaii.com	travel	PGES	Built for a dive operator in Hawaii.
 bestdivinginmaui.com	travel	PGES	Built for a dive operator on Maui.
-bestdivinginoahu.com	travel	PGES	Built for a dive operator on Oahu.
+bestdivinginoahu.com	travel	PDGES	Built for a dive operator on Oahu.
 bestdoghampoo.com	pets	ES	Built for a dog shampoo brand (spelled doghampoo).
 bestdomainsforbusiness.com	marketing	PDCE	Built for a domain brokerage.
 bestfencecolorado.com	trades	PGES	Built for a fence contractor in Colorado.
@@ -91,9 +91,9 @@ bestglp-1forweightloss.com	health	PE	Built for a weight-loss clinic.
 besthawaiisnorkeling.com	travel	PGE	Built for a snorkeling tour operator in Hawaii.
 besthawaiivacationrental.com	travel	PGE	Built for a vacation rental manager in Hawaii.
 besthotelinhawaii.com	travel	PGES	Built for a hotel or booking site in Hawaii.
-besthotelsbelize.com	travel	PGES	Built for a hotel or booking site in Belize.
-besthotelscostarica.com	travel	PGES	Built for a hotel or booking site in Costa Rica.
-besthotelshawaii.com	travel	PGES	Built for a hotel or booking site in Hawaii.
+besthotelsbelize.com	travel	PDGES	Built for a hotel or booking site in Belize.
+besthotelscostarica.com	travel	PDGES	Built for a hotel or booking site in Costa Rica.
+besthotelshawaii.com	travel	PDGES	Built for a hotel or booking site in Hawaii.
 besthotelsincolorado.com	travel	PGE	Built for a hotel or booking site in Colorado.
 bestluxuryyachtsforsale.com	auto	PE	Built for a yacht broker.
 bestmassagehonolulu.com	health	PGES	Built for a massage practice in Honolulu.
@@ -102,15 +102,15 @@ bestmoversdenver.com	cleanmove	PGES	Built for a moving company in the Denver met
 bestoahumassages.com	health	PGES	Built for a massage practice on Oahu.
 bestpaintersindenver.com	trades	PGE	Built for a painting contractor in the Denver metro.
 bestpizzainhawaii.com	food	PGES	Built for a pizzeria in Hawaii.
-bestplacestodiveinbelize.com	travel	PGE	Built for a dive shop in Belize.
+bestplacestodiveinbelize.com	travel	PDGE	Built for a dive shop in Belize.
 bestplacestostayhawaii.com	travel	PGE	Built for a lodging guide in Hawaii.
 bestplacestostayinkauai.com	travel	PGE	Built for a lodging guide on Kauai.
 bestplacestostayinoahu.com	travel	PGE	Built for a lodging guide on Oahu.
 bestplacestostaymaui.com	travel	PGE	Built for a lodging guide on Maui.
 bestprobioticforcats.com	pets	PE	Built for a pet probiotic brand.
-bestrestaurantcolorado.com	food	PGE	Built for a restaurant in Colorado.
-bestrestaurantdenver.com	food	PGE	Built for a restaurant in the Denver metro.
-bestrestaurantsbelize.com	food	PGE	Built for a restaurant in Belize.
+bestrestaurantcolorado.com	food	PDGE	Built for a Colorado restaurant guide.
+bestrestaurantdenver.com	food	PDGE	Built for a Denver restaurant guide.
+bestrestaurantsbelize.com	food	PDGE	Built for a Belize restaurant guide.
 bestrestaurantsinoahu.com	food	PGE	Built for a restaurant on Oahu.
 bestroofersdenverco.com	trades	PGES	Built for a roofing contractor in the Denver metro.
 bestscubadivinginhawaii.com	travel	PGE	Built for a dive operator in Hawaii.
@@ -119,10 +119,10 @@ bestscubadivinginmaui.com	travel	PGE	Built for a dive operator on Maui.
 bestscubadivingoahu.com	travel	PGES	Built for a dive operator on Oahu.
 bestscubahawaii.com	travel	PGES	Built for a scuba diving operator in Hawaii.
 bestseocompanyamerica.com	marketing	PCGE	Built for an SEO agency in America.
-bestseocompanydenverco.com	marketing	PGE	Built for an SEO agency in the Denver metro.
+bestseocompanydenverco.com	marketing	PDGE	Built for an SEO agency in the Denver metro.
 bestshowerkit.com	bath	PDES	Built for a shower kit supplier.
 bestsilentdisco.com	events	PBS	Built for a silent disco rental company.
-bestsnorkelingbelize.com	travel	PGE	Built for a snorkeling tour operator in Belize.
+bestsnorkelingbelize.com	travel	PDGE	Built for a snorkeling tour operator in Belize.
 besttacotruckdenver.com	food	PGES	Built for a taco truck in the Denver metro.
 bestthingstodoinoahu.com	travel	PGE	Built for a things-to-do guide on Oahu.
 bestusaseo.com	marketing	PCGES	Built for an SEO agency in the USA.
@@ -132,14 +132,14 @@ bestvrworlds.com	vr	PBS	Built for a VR experience or game brand.
 bestwebsitecoder.com	marketing	PCES	Built for a custom website developer.
 bigislandseo.com	marketing	PDGES	Built for an SEO agency on the Big Island.
 bogotaseo.com	marketing	PGES	Built for an SEO agency in Bogota.
-bookhotelandflights.com	travel	PES	Built for a flight and hotel booking site.
+bookhotelandflights.com	travel	PDES	Built for a flight and hotel booking site.
 bookvacationpackage.com	travel	PES	Built for a vacation rental manager.
 bostonwalkintub.com	bath	PGES	Built for a walk-in tub dealer in Boston.
-botoxlongmont.com	health	PGES	Built for a Botox and injectables clinic in Longmont.
+botoxlongmont.com	health	PDGES	Built for a Botox and injectables clinic in Longmont.
 bouldercobotox.com	health	PGES	Built for a Botox and injectables clinic in Boulder.
 bouldercoloradorealestateprices.com	realestate	PGE	Built for a real estate brokerage in Boulder.
-bouldercopainters.com	trades	PGES	Built for a painting contractor in Boulder.
-bouldercoseo.com	marketing	PGES	Built for an SEO agency in Boulder.
+bouldercopainters.com	trades	PDGES	Built for a painting contractor in Boulder.
+bouldercoseo.com	marketing	PDGES	Built for an SEO agency in Boulder.
 boulderpropertiesforsale.com	realestate	PGE	Built for a property sales agent in Boulder.
 brandedcustompens.com	promo	PES	Built for a promotional products supplier.
 brandedgolfshirts.com	promo	PES	Built for a promotional products supplier.
@@ -149,13 +149,13 @@ brightonbeautysalon.com	health	PGES	Built for a salon in Brighton.
 brightonbotox.com	health	PGES	Built for a Botox and injectables clinic in Brighton.
 brightoncarinsurance.com	insurance	PGE	Built for an insurance agency in Brighton.
 brightoncodentist.com	health	PGES	Built for a dental practice in Brighton.
-brightoncohairsalon.com	health	PGES	Built for a salon in Brighton.
+brightoncohairsalon.com	health	PDGES	Built for a salon in Brighton.
 brightoncoorthodontics.com	health	PGE	Built for an orthodontic practice in Brighton.
 brightondayspa.com	health	PGES	Built for a spa in Brighton.
 brightonfacials.com	health	PGES	Built for a skincare studio in Brighton.
-brightonhaircut.com	health	PGES	Built for a hair salon in Brighton.
+brightonhaircut.com	health	PDGES	Built for a hair salon in Brighton.
 brightonlashes.com	health	PGES	Built for a lash studio in Brighton.
-brightonorthodontist.com	health	PGE	Built for an orthodontic practice in Brighton.
+brightonorthodontist.com	health	PDGE	Built for an orthodontic practice in Brighton.
 brightontanning.com	health	PGES	Built for a tanning salon in Brighton.
 brightontire.com	auto	PXGES	Built for a tire shop in Brighton.
 brightontirerepair.com	auto	PGES	Built for a tire shop in Brighton.
@@ -163,7 +163,7 @@ brightontires.com	auto	PXGES	Built for a tire shop in Brighton.
 brightontireshop.com	auto	PGES	Built for a tire shop in Brighton.
 brightonwaxing.com	health	PGES	Built for a waxing studio in Brighton.
 businesscardtap.com	marketing	PBS	Built for an NFC business card brand.
-businessdirectorynow.com	marketing	PDCE	Built for a business listing and directory platform.
+businessdirectorynow.com	marketing	PCE	Built for a business listing and directory platform.
 businessdomainforsale.com	marketing	PCE	Built for a domain brokerage.
 buyappliancesnearme.com	home	PES	Built for an appliance retailer.
 buyboatnearme.com	auto	PES	Built for a boat dealer.
@@ -175,7 +175,7 @@ buycondocostarica.com	realestate	PGES	Built for a condo sales agent in Costa Ric
 buycondohawaii.com	realestate	PGES	Built for a condo sales agent in Hawaii.
 buycondopuertoplata.com	realestate	PGES	Built for a condo sales agent in Puerto Plata.
 buycondososua.com	realestate	PGES	Built for a condo sales agent in Sosua.
-buyhousecostarica.com	realestate	PGES	Built for a residential real estate agent in Costa Rica.
+buyhousecostarica.com	realestate	PDGES	Built for a residential real estate agent in Costa Rica.
 buyhousehawaii.com	realestate	PGES	Built for a residential real estate agent in Hawaii.
 buyhousekauai.com	realestate	PGES	Built for a residential real estate agent on Kauai.
 buypropertybelize.com	realestate	PGES	Built for a property sales agent in Belize.
@@ -189,22 +189,23 @@ buyrealestatepuertoplata.com	realestate	PGE	Built for a real estate brokerage in
 buyrealestatesosua.com	realestate	PGES	Built for a real estate brokerage in Sosua.
 buysmarttoilet.com	bath	PES	Built for a smart toilet and bidet retailer.
 buywasheranddryer.com	home	PCES	Built for a washer and dryer retailer.
-buyweburl.com	marketing	PDBS	Built for a domain registrar.
-cabaretebeachdominicanrepublic.com	travel	PGE	Built for a beach guide in the Dominican Republic.
-cabaretecondosforsale.com	realestate	PGE	Built for a condo sales agent in Cabarete.
+buyweburl.com	marketing	PDBS	Built for a domain registration storefront.
+cabaretebeachdominicanrepublic.com	travel	PDGE	Built for a beach guide in the Dominican Republic.
+cabaretecondosforsale.com	realestate	PDGE	Built for a condo sales agent in Cabarete.
 cabareterealty.com	realestate	PGES	Built for a real estate brokerage in Cabarete.
-cabareterestaurants.com	food	PGES	Built for a restaurant in Cabarete.
+cabareterestaurants.com	food	PDGES	Built for a Cabarete restaurant guide.
+cabusinesslist.com	marketing	PGES	Built for a California business directory.
 calmingdogsupplements.com	pets	PE	Built for a dog supplement brand.
 campersforsaledenver.com	auto	PGE	Built for an RV and camper dealer in the Denver metro.
 carinsurancedenverco.com	insurance	PGE	Built for an insurance agency in the Denver metro.
 carinsurancelovelandco.com	insurance	PGE	Built for an insurance agency in Loveland.
-carpetcleanerinomaha.com	cleanmove	PXGE	Built for a carpet cleaning company in Omaha.
+carpetcleanerinomaha.com	cleanmove	PDXGE	Built for a carpet cleaning company in Omaha.
 carpetcleanerinomahane.com	cleanmove	PXGE	Built for a carpet cleaning company in Omaha.
 carpetcleaningdenvercolorado.com	cleanmove	PGE	Built for a carpet cleaning company in the Denver metro.
 carpetshampoodenver.com	cleanmove	PGES	Built for a carpet cleaning company in the Denver metro.
 carsforsalelongmont.com	auto	PGES	Built for a used car dealer in Longmont.
 carwindshieldreplacementdenver.com	auto	PGE	Built for a windshield replacement shop in the Denver metro.
-castlerock-seo.com	marketing	PGE	Built for an SEO agency in Castle Rock.
+castlerock-seo.com	marketing	PDGE	Built for an SEO agency in Castle Rock.
 cateardrop.com	pets	PBS	Built for a pet ear care brand.
 cateringcompanycolorado.com	food	PGE	Built for a caterer in Colorado.
 cateringcompanydenver.com	food	PGE	Built for a caterer in the Denver metro.
@@ -215,27 +216,28 @@ cheapflightshotel.com	travel	PES	Built for a flight and hotel booking site.
 cheapmobilemechanicnearme.com	auto	PE	Built for a mobile mechanic.
 cheaptiresdenver.com	auto	PGES	Built for a tire shop in the Denver metro.
 cheapvacationrentalshawaii.com	travel	PGE	Built for a vacation rental manager in Hawaii.
+cobusinesslist.com	marketing	PDGES	Built for a Colorado business directory.
 colombia-seo.com	marketing	PGE	Built for an SEO agency in Colombia.
 coloradobuyhouse.com	realestate	PGES	Built for a residential real estate agent in Colorado.
-coloradocampingspots.com	travel	PGE	Built for a camping guide in Colorado.
+coloradocampingspots.com	travel	PDGE	Built for a camping guide in Colorado.
 coloradocustomdeck.com	trades	PGES	Built for a deck builder in Colorado.
 coloradofences.com	trades	PGES	Built for a fence contractor in Colorado.
 coloradoglp-1.com	health	PXGE	Built for a GLP-1 and weight-loss clinic in Colorado.
 coloradoglp1.com	health	PXGE	Built for a GLP-1 and weight-loss clinic in Colorado.
 coloradomovingco.com	cleanmove	PGES	Built for a moving company in Colorado.
 coloradospringsdeck.com	trades	PGES	Built for a deck builder in Colorado Springs.
-coloradowhatsup.com	travel	BS	Built for a local events guide in Colorado.
-coloradowhattodo.com	travel	GES	Built for a local activities guide in Colorado.
-comicscomealive.com	events	BS	Built for a comics or animation brand.
+coloradowhatsup.com	travel	DBS	Built for a local events guide in Colorado.
+coloradowhattodo.com	travel	DGES	Built for a local activities guide in Colorado.
+comicscomealive.com	events	DBS	Built for a comics or animation brand.
 comicsonlinefree.com	events	ES	Built for a free online comics site.
 condoforsaledenver.com	realestate	PGES	Built for a condo sales agent in the Denver metro.
 condosforsaleboulderco.com	realestate	PGE	Built for a condo sales agent in Boulder.
-conversationalaibot.com	ai	PCES	Built for a chatbot and conversational AI vendor.
-costarica-seo.com	marketing	PGE	Built for an SEO agency in Costa Rica.
+conversationalaibot.com	ai	PDCES	Built for a chatbot and conversational AI vendor.
+costarica-seo.com	marketing	PDGE	Built for an SEO agency in Costa Rica.
 costaricaattraction.com	travel	PGES	Built for an attractions and tours operator in Costa Rica.
 costaricaentertainment.com	travel	PGE	Built for an entertainment guide in Costa Rica.
 crotchrocketsforsale.com	auto	PE	Built for a sport bike dealer.
-customizepromotionalproducts.com	promo	PCE	Built for a promotional products supplier.
+customizepromotionalproducts.com	promo	PDCE	Built for a promotional products supplier.
 customnfcbusinesscards.com	marketing	PE	Built for an NFC business card brand.
 custompenwithlogo.com	promo	PES	Built for a promotional pen supplier.
 customtentwithlogos.com	promo	PES	Built for a custom tent supplier.
@@ -267,7 +269,7 @@ denvercofurniture.com	home	PGES	Built for a furniture retailer in the Denver met
 denvercohouseforsale.com	realestate	PGE	Built for a residential real estate agent in the Denver metro.
 denvercojunkremoval.com	trades	PGES	Built for a junk removal company in the Denver metro.
 denvercolandscaping.com	trades	PGES	Built for a landscaping company in the Denver metro.
-denvercoloradothingstodo.com	travel	PGE	Built for a things-to-do guide in the Denver metro.
+denvercoloradothingstodo.com	travel	PDGE	Built for a things-to-do guide in the Denver metro.
 denvercomediator.com	legal	PXGES	Built for a mediation practice in the Denver metro.
 denvercomediators.com	legal	PXGES	Built for a mediation practice in the Denver metro.
 denvercomover.com	cleanmove	PXGES	Built for a moving company in the Denver metro.
@@ -292,19 +294,19 @@ denverseoblog.com	marketing	PGES	Built for an SEO agency in the Denver metro.
 denvertopseocompany.com	marketing	PGES	Built for an SEO agency in the Denver metro.
 denverwalkintub.com	bath	PGES	Built for a walk-in tub dealer in the Denver metro.
 discountappliancesdenver.com	home	PGE	Built for a discount appliance store in the Denver metro.
-distributepressreleases.com	marketing	PE	Built for a press release distribution service.
+distributepressreleases.com	marketing	PDE	Built for a press release distribution service.
 divorceattorneygreeley.com	legal	PGE	Built for an attorney in Greeley.
 divorcelawyersgreeley.com	legal	PGE	Built for a divorce attorney in Greeley.
 divorcemediatorsdenver.com	legal	PXGE	Built for a divorce attorney in the Denver metro.
 divorcemediatorsdenverco.com	legal	PXGE	Built for a divorce attorney in the Denver metro.
 dogeardrops.com	pets	PBS	Built for a pet ear care brand.
-dognutritionsupplements.com	pets	PE	Built for a dog supplement brand.
+dognutritionsupplements.com	pets	PDE	Built for a dog supplement brand.
 dogsupplementsonline.com	pets	PCE	Built for a dog supplement brand.
 dogtreatchews.com	pets	PES	Built for a dog supplement brand.
-dominicanrealestatetour.com	realestate	PGE	Built for a real estate brokerage in the Dominican Republic.
-dominicanrepublicplacestovisit.com	travel	GE	Built for a destination guide in the Dominican Republic.
+dominicanrealestatetour.com	realestate	PDGE	Built for a real estate brokerage in the Dominican Republic.
+dominicanrepublicplacestovisit.com	travel	DGE	Built for a destination guide in the Dominican Republic.
 dominicanrepublicseo.com	marketing	PGE	Built for an SEO agency in the Dominican Republic.
-dominicanrepublicvacationspots.com	travel	GE	Built for a vacation rental manager in the Dominican Republic.
+dominicanrepublicvacationspots.com	travel	DGE	Built for a Dominican Republic travel guide.
 duiattorneygreeley.com	legal	PGES	Built for an attorney in Greeley.
 duilawyersingreeleyco.com	legal	PGE	Built for a law firm in Greeley.
 educationalgamewebsites.com	events	E	Built for a games site.
@@ -326,12 +328,14 @@ fishingguidecolorado.com	travel	PXGE	Built for a fishing charter or guide in Col
 fishingguidehawaii.com	travel	PXGES	Built for a fishing charter or guide in Hawaii.
 fishingguidescolorado.com	travel	PXGE	Built for a fishing charter or guide in Colorado.
 fishingguideshawaii.com	travel	PXGES	Built for a fishing charter or guide in Hawaii.
-flighthotelpackage.com	travel	PES	Built for a flight and hotel booking site.
+flbusinesslist.com	marketing	PGES	Built for a Florida business directory.
+flighthotelpackage.com	travel	PDES	Built for a flight and hotel booking site.
 flooringcastlerock.com	trades	PGES	Built for a flooring contractor in Castle Rock.
 foodtruckcateringdenverco.com	food	PGE	Built for a caterer in the Denver metro.
 frederickcorealestate.com	realestate	PGE	Built for a real estate brokerage in Frederick.
 fungamewebsite.com	events	ES	Built for a games site.
 funthingstodoindenver.com	travel	PGE	Built for a things-to-do guide in the Denver metro.
+gabusinesslist.com	marketing	PGES	Built for a Georgia business directory.
 geodenver.com	marketing	PBS	Built for a generative engine optimization agency in the Denver metro.
 globalactionnews.com	events	PES	Built for a news publication.
 globalpeacepromise.com	events	BS	Built for a nonprofit.
@@ -341,13 +345,13 @@ glp-1colorado.com	health	PGE	Built for a GLP-1 and weight-loss clinic in Colorad
 glp-1denver.com	health	PXGE	Built for a GLP-1 and weight-loss clinic in the Denver metro.
 glp-1littleton.com	health	PXGE	Built for a GLP-1 and weight-loss clinic in Littleton.
 glp1agonistmeds.com	health	PE	Built for a GLP-1 and weight-loss clinic.
-glp1denver.com	health	PXGE	Built for a GLP-1 and weight-loss clinic in the Denver metro.
+glp1denver.com	health	PDXGE	Built for a GLP-1 and weight-loss clinic in the Denver metro.
 glp1littleton.com	health	PXGE	Built for a GLP-1 and weight-loss clinic in Littleton.
 greeleycoduiattorney.com	legal	PGE	Built for an attorney in Greeley.
 greeleycoduilawyer.com	legal	PGES	Built for a law firm in Greeley.
 greeleycolawyer.com	legal	PGES	Built for a law firm in Greeley.
 greeleymediator.com	legal	PGES	Built for a mediation practice in Greeley.
-handicapbathtubs.com	bath	PCES	Built for an accessibility bath and walk-in tub company.
+handicapbathtubs.com	bath	PDCES	Built for an accessibility bath and walk-in tub company.
 handicaprollinshower.com	bath	PCE	Built for an accessibility bath and walk-in tub company.
 hawaiidiveshops.com	travel	PGES	Built for a dive shop in Hawaii.
 hawaiiscubashops.com	travel	PGES	Built for a scuba diving operator in Hawaii.
@@ -372,6 +376,7 @@ housesforsaleinfrederickco.com	realestate	PGE	Built for a residential real estat
 howtosaveonvacations.com	travel	E	Built for a vacation rental manager.
 howtosetupaiagent.com	ai	PXES	Built for an AI agent setup guide or course.
 howtosetupaiagents.com	ai	PXE	Built for an AI agent setup guide or course.
+ilbusinesslist.com	marketing	PGES	Built for a Illinois business directory.
 ilovemybrands.com	promo	BS	Built for a brand or merchandise community.
 insurancebrighton.com	insurance	PGES	Built for an insurance agency in Brighton.
 insuranceloveland.com	insurance	PGES	Built for an insurance agency in Loveland.
@@ -384,7 +389,7 @@ laromanaseo.com	marketing	PGES	Built for an SEO agency in La Romana.
 lawyergreeley.com	legal	PGES	Built for a law firm in Greeley.
 lawyersingreeleyco.com	legal	PGES	Built for a law firm in Greeley.
 learntouseaiagents.com	ai	PE	Built for an AI agent training course.
-linkrestaurants.com	food	PDCES	Built for a restaurant directory.
+linkrestaurants.com	food	PDCES	Built for a restaurant digital menu and listing service.
 littletonautoglass.com	auto	PGES	Built for an auto glass shop in Littleton.
 littletonbathroomremodel.com	bath	PGE	Built for a bath and shower remodeling company in Littleton.
 littletoncoseo.com	marketing	PGES	Built for an SEO agency in Littleton.
@@ -393,7 +398,7 @@ littletonglp-1.com	health	PGE	Built for a GLP-1 and weight-loss clinic in Little
 littletongranite.com	trades	PGES	Built for a granite and countertop shop in Littleton.
 littletonmattress.com	home	PGES	Built for a mattress retailer in Littleton.
 localdealsfinder.com	prof	ES	Built for a local deals site.
-localfoodnearme.com	food	PES	Built for a food business.
+localfoodnearme.com	food	PDES	Built for a local food discovery guide.
 localmoverdenver.com	cleanmove	PGES	Built for a moving company in the Denver metro.
 localseoforrestaurant.com	marketing	PE	Built for an agency selling SEO to restaurants.
 longdistancemoversdenver.com	cleanmove	PGE	Built for a moving company in the Denver metro.
@@ -405,10 +410,10 @@ losangelesseopro.com	marketing	PGES	Built for an SEO agency in Los Angeles.
 lovelandcoinsurance.com	insurance	PGES	Built for an insurance agency in Loveland.
 lovelandhealthinsurance.com	insurance	PGE	Built for a health insurance agency in Loveland.
 lyonscorealestate.com	realestate	PGES	Built for a real estate brokerage in Lyons.
-madeinusawalkintubs.com	bath	PGES	Built for a walk-in tub dealer in the USA.
+madeinusawalkintubs.com	bath	PDGES	Built for a walk-in tub dealer in the USA.
 mao-seo.com	marketing	PB	Built for an SEO agency.
 marketingforrestaurant.com	marketing	PE	Built for an agency selling marketing to restaurants.
-massageshonolulu.com	health	PGES	Built for a massage practice in Honolulu.
+massageshonolulu.com	health	PDGES	Built for a massage practice in Honolulu.
 mattresscolorado.com	home	PGES	Built for a mattress retailer in Colorado.
 mattressesdenver.com	home	PGES	Built for a mattress retailer in the Denver metro.
 mattresslittleton.com	home	PGES	Built for a mattress retailer in Littleton.
@@ -424,9 +429,9 @@ mobilecardetailingomaha.com	auto	PGE	Built for a mobile detailing service in Oma
 mobilecarrepairnearme.com	auto	PE	Built for a mobile car repair service.
 mobilemechaniccolorado.com	auto	PGE	Built for a mobile mechanic in Colorado.
 mobilewindshieldreplacementdenver.com	auto	PGE	Built for a windshield replacement shop in the Denver metro.
-monumentcowebdesigner.com	marketing	PGE	Built for a web design studio in Monument.
+monumentcowebdesigner.com	marketing	PDGE	Built for a web design studio in Monument.
 monumentdeck.com	trades	PGES	Built for a deck builder in Monument.
-monumentseo.com	marketing	PGES	Built for an SEO agency in Monument.
+monumentseo.com	marketing	PDGES	Built for an SEO agency in Monument.
 monumentwebdesigner.com	marketing	PGES	Built for a web design studio in Monument.
 motorcyclescolorado.com	auto	PGES	Built for a motorcycle dealer in Colorado.
 motorhomerentaldenver.com	travel	PGE	Built for an RV rental company in the Denver metro.
@@ -434,19 +439,26 @@ moversdenverco.com	cleanmove	PGES	Built for a moving company in the Denver metro
 movingcompaniesdenverco.com	cleanmove	PGE	Built for a moving company in the Denver metro.
 movinghelpdenver.com	cleanmove	PGES	Built for a moving company in the Denver metro.
 mysaleshelp.com	marketing	PDBS	Built for a sales training business.
+nebusinesslist.com	marketing	PGES	Built for a Nebraska business directory.
 nederlandcorealestate.com	realestate	PGE	Built for a real estate brokerage in Nederland.
-oahufishingguides.com	travel	PGES	Built for a fishing charter or guide on Oahu.
+neurallinkchildrensbooks.com	events	BX	Built for a children's book publisher.
+neurolinkchildrensbooks.com	events	BX	Built for a children's book publisher.
+neurolinkkidsbooks.com	events	BX	Built for a children's book publisher.
+nvbusinesslist.com	marketing	PGES	Built for a Nevada business directory.
+nybusinesslist.com	marketing	PGES	Built for a New York business directory.
+oahufishingguides.com	travel	PDGES	Built for a fishing charter or guide on Oahu.
 oahurealestate.homes	realestate	PGES	Built for a real estate brokerage on Oahu.
 ohaurealestate.com	realestate	GES	Built for a real estate brokerage on Oahu (a common misspelling of Oahu).
-omahamobiledetailing.com	auto	PGE	Built for a mobile detailing service in Omaha.
-omahanecarpetcleaning.com	cleanmove	PGE	Built for a carpet cleaning company in Omaha.
+omahamobiledetailing.com	auto	PDGE	Built for a mobile detailing service in Omaha.
+omahanecarpetcleaning.com	cleanmove	PDGE	Built for a carpet cleaning company in Omaha.
 omahaseopros.com	marketing	PDGES	Built for an SEO agency in Omaha.
 onarollseo.com	marketing	PBS	Built for an SEO agency.
+pabusinesslist.com	marketing	PGES	Built for a Pennsylvania business directory.
 painterhotline.com	trades	PDBS	Built for a painting contractor.
-paintersarvada.com	trades	PGES	Built for a painting contractor in Arvada.
-paintersgoldenco.com	trades	PGES	Built for a painting contractor in Golden.
-painterslakewood.com	trades	PGES	Built for a painting contractor in Lakewood.
-painterswheatridge.com	trades	PGES	Built for a painting contractor in Wheat Ridge.
+paintersarvada.com	trades	PDGES	Built for a painting contractor in Arvada.
+paintersgoldenco.com	trades	PDGES	Built for a painting contractor in Golden.
+painterslakewood.com	trades	PDGES	Built for a painting contractor in Lakewood.
+painterswheatridge.com	trades	PDGES	Built for a painting contractor in Wheat Ridge.
 paintingbrighton.com	trades	PDGES	Built for a painting contractor in Brighton.
 pawcreamfordogs.com	pets	PBS	Built for a dog supplement brand.
 pergolabuildersdenver.com	trades	PGE	Built for a pergola builder in the Denver metro.
@@ -455,8 +467,9 @@ petdentalcleanse.com	pets	PBS	Built for a pet dental brand.
 peteardrops.com	pets	PBS	Built for a pet ear care brand.
 pethealthsupplement.com	pets	PCES	Built for a pet supplement or pet care brand.
 petssupplement.com	pets	PES	Built for a pet supplement or pet care brand.
+phoenixsworld.com	events	DB	Built for a kids' entertainment brand.
 placestovisitincolorado.com	travel	PGE	Built for a destination guide in Colorado.
-placestovisitincostarica.com	travel	PGE	Built for a destination guide in Costa Rica.
+placestovisitincostarica.com	travel	PDGE	Built for a destination guide in Costa Rica.
 pressreleaseforbusiness.com	marketing	PDE	Built for a press release publishing wire.
 probioticchewsfordogs.com	pets	PE	Built for a pet probiotic brand.
 probioticsforcat.com	pets	PES	Built for a pet probiotic brand.
@@ -466,9 +479,9 @@ propertiesforsalecolorado.com	realestate	PGE	Built for a property sales agent in
 puertoplata-realestate.com	realestate	PGE	Built for a real estate brokerage in Puerto Plata.
 puertoplata-realty.com	realestate	PGE	Built for a real estate brokerage in Puerto Plata.
 puertoplatarealstate.com	realestate	GE	Built for a real estate brokerage in Puerto Plata (spelled realstate).
-puertoplatarestaurants.com	food	PGE	Built for a restaurant in Puerto Plata.
-puertoplataseo.com	marketing	PGES	Built for an SEO agency in Puerto Plata.
-puertorico-seo.com	marketing	PGE	Built for an SEO agency in Puerto Rico.
+puertoplatarestaurants.com	food	PDGE	Built for a Puerto Plata restaurant guide.
+puertoplataseo.com	marketing	PDGES	Built for an SEO agency in Puerto Plata.
+puertorico-seo.com	marketing	PDGE	Built for an SEO agency in Puerto Rico.
 ranchhousesforsale.com	realestate	PES	Built for a residential real estate agent.
 realestateerieco.com	realestate	PGES	Built for a real estate brokerage in Erie.
 realestateforsalebouldercolorado.com	realestate	PGE	Built for a real estate brokerage in Boulder.
@@ -477,25 +490,25 @@ realestatelongmontco.com	realestate	PGE	Built for a real estate brokerage in Lon
 realestatenederland.com	realestate	PGES	Built for a real estate brokerage in Nederland.
 realestateniwot.com	realestate	PXGES	Built for a real estate brokerage in Niwot.
 realestateniwotco.com	realestate	PXGES	Built for a real estate brokerage in Niwot.
-realestatesosua.com	realestate	PGES	Built for a real estate brokerage in Sosua.
+realestatesosua.com	realestate	PDGES	Built for a real estate brokerage in Sosua.
 realtyboulderco.com	realestate	PGES	Built for a real estate brokerage in Boulder.
 realtysosua.com	realestate	PGES	Built for a real estate brokerage in Sosua.
 rentsilentdiscoheadphones.com	events	PE	Built for a silent disco rental company.
 rentvacationhomehawaii.com	travel	PGE	Built for a vacation rental manager in Hawaii.
 restaurantesenpuertoplata.com	food	PIGE	Built for a restaurant guide in Puerto Plata.
-restauranthonolulu.com	food	PGES	Built for a restaurant in Honolulu.
+restauranthonolulu.com	food	PDGES	Built for a Honolulu restaurant guide.
 restaurantlocalseo.com	marketing	PES	Built for an agency selling SEO to restaurants.
 restaurantmaui.com	food	PGES	Built for a restaurant on Maui.
-restaurantsadvertising.com	marketing	PCE	Built for an agency selling advertising to restaurants.
+restaurantsadvertising.com	marketing	PDCE	Built for an agency selling advertising to restaurants.
 restaurantsadvertisingideas.com	marketing	PE	Built for an agency selling advertising to restaurants.
 restaurantsbelize.com	food	PIGES	Built for a restaurant in Belize.
 restaurantscostarica.com	food	PIGE	Built for a restaurant in Costa Rica.
 restaurantsmarketingstrategies.com	marketing	PE	Built for an agency selling marketing to restaurants.
 restaurantsoahu.com	food	PGES	Built for a restaurant on Oahu.
 restaurantspuertoplata.com	food	PGE	Built for a restaurant in Puerto Plata.
-restaurantsseo.com	marketing	PCES	Built for an agency selling SEO to restaurants.
+restaurantsseo.com	marketing	PDCES	Built for an agency selling SEO to restaurants.
 rockitwears.com	events	PBS	Built for an apparel brand.
-roll-in-showers.com	bath	PCE	Built for an accessibility bath and walk-in tub company.
+roll-in-showers.com	bath	PDCE	Built for an accessibility bath and walk-in tub company.
 roofcontractordenverco.com	trades	PGE	Built for a roofing contractor in the Denver metro.
 roofersdenvercolorado.com	trades	PGE	Built for a roofing contractor in the Denver metro.
 roofingcompaniesdenver.com	trades	PGE	Built for a roofing contractor in the Denver metro.
@@ -503,58 +516,58 @@ rugcleaningdenverco.com	cleanmove	PGES	Built for a rug cleaning specialist in th
 rugcleaningomahane.com	cleanmove	PGES	Built for a rug cleaning specialist in Omaha.
 rvsalesdenver.com	auto	PGES	Built for an RV dealer in the Denver metro.
 salestrainingtool.com	marketing	PCES	Built for a sales training business.
-sanpedrosnorkelingtours.com	travel	PGE	Built for a snorkeling tour operator in San Pedro, Belize.
-santodomingoseo.com	marketing	PGES	Built for an SEO agency in Santo Domingo.
-searchconverts.com	marketing	PDBS	Built for a full-service marketing agency.
+sanpedrosnorkelingtours.com	travel	PDGE	Built for a snorkeling tour operator in San Pedro, Belize.
+santodomingoseo.com	marketing	PDGES	Built for an SEO agency in Santo Domingo.
+searchconverts.com	marketing	PDBS	Built for a conversion rate optimization agency.
 seniorbathroomsafety.com	bath	PCE	Built for an accessibility bath and walk-in tub company.
 seniorcareideas.com	health	PES	Built for a senior care service.
 seniorwalkinbathtubs.com	bath	PDE	Built for a walk-in tub dealer.
-seniorwalkintub.com	bath	PES	Built for a walk-in tub dealer.
+seniorwalkintub.com	bath	PDES	Built for a walk-in tub dealer.
 seo-hawaii.com	marketing	PGE	Built for an SEO agency in Hawaii.
 seoagencyhawaii.com	marketing	PGES	Built for an SEO agency in Hawaii.
 seoboulderco.com	marketing	PGES	Built for an SEO agency in Boulder.
-seobroomfield.com	marketing	PGES	Built for an SEO agency in Broomfield.
-seocompanyaurora.com	marketing	PGES	Built for an SEO agency in Aurora.
+seobroomfield.com	marketing	PDGES	Built for an SEO agency in Broomfield.
+seocompanyaurora.com	marketing	PDGES	Built for an SEO agency in Aurora.
 seocompanyhawaii.com	marketing	PGES	Built for an SEO agency in Hawaii.
 seodenverco.com	marketing	PGES	Built for an SEO agency in the Denver metro.
-seodominicanrepublic.com	marketing	PGE	Built for an SEO agency in the Dominican Republic.
-seoexpertsdenver.com	marketing	PGES	Built for an SEO agency in the Denver metro.
+seodominicanrepublic.com	marketing	PDGE	Built for an SEO agency in the Dominican Republic.
+seoexpertsdenver.com	marketing	PDGES	Built for an SEO agency in the Denver metro.
 seoinmaui.com	marketing	PGES	Built for an SEO agency on Maui.
-seolittletonco.com	marketing	PGES	Built for an SEO agency in Littleton.
+seolittletonco.com	marketing	PDGES	Built for an SEO agency in Littleton.
 seomarketingdenver.com	marketing	PGES	Built for a marketing agency in the Denver metro.
 seooahu.com	marketing	PGES	Built for an SEO agency on Oahu.
-seothornton.com	marketing	PGES	Built for an SEO agency in Thornton.
-seounitedstates.com	marketing	PCGES	Built for an SEO agency in the United States.
+seothornton.com	marketing	PDGES	Built for an SEO agency in Thornton.
+seounitedstates.com	marketing	PDCGES	Built for an SEO agency in the United States.
 seowebdevelopers.com	marketing	PCES	Built for a web development shop.
 shorttermrentalscostarica.com	travel	PGE	Built for a rental manager in Costa Rica.
 shower4less.com	bath	PXE	Built for a discount shower retailer.
 showerpackages.com	bath	PCES	Built for a bath and shower remodeling company.
 showerremodelingnearme.com	bath	PCE	Built for a bath and shower remodeling company.
-showers4less.com	bath	PDXCE	Built for a discount shower retailer.
-showersforelderly.com	bath	PCES	Built for an accessibility bath and walk-in tub company.
+showers4less.com	bath	PXCE	Built for a discount shower retailer.
+showersforelderly.com	bath	PDCES	Built for an accessibility bath and walk-in tub company.
 showersforless.com	bath	PCES	Built for a discount shower retailer.
 showerwallskit.com	bath	PDES	Built for a shower wall panel supplier.
-sickmindsgroup.com	events	BS	Built for a creative collective.
+sickmindsgroup.com	events	DBS	Built for a creative collective.
 silentdancepartyheadphones.com	events	E	Built for a silent disco rental company.
 silentdiscodenverco.com	events	PGES	Built for a silent disco rental company in the Denver metro.
 silentdiscoforrent.com	events	PES	Built for a silent disco rental company.
 silentdiscopartynearme.com	events	PE	Built for a silent disco rental company.
-socialmybusiness.com	marketing	PDBS	Built for a social media management service.
+socialmybusiness.com	marketing	PDBS	Built for a local group advertising service.
 spabrighton.com	health	PGES	Built for a spa in Brighton.
 supplementsdogs.com	pets	PES	Built for a dog supplement brand.
 supplementsforcat.com	pets	PES	Built for a cat supplement brand.
 supplementsfordog.com	pets	PES	Built for a dog supplement brand.
 surfingclasseshawaii.com	travel	PGE	Built for a surf school in Hawaii.
 surfinglessonscostarica.com	travel	PGE	Built for a surf school in Costa Rica.
-surflessonhonolulu.com	travel	PGES	Built for a surf school in Honolulu.
+surflessonhonolulu.com	travel	PDGES	Built for a surf school in Honolulu.
 theartyoulove.com	events	PBS	Built for an art gallery.
 thecryptoguider.com	events	BS	Built for a crypto education site.
 thedenverdayspa.com	health	PGES	Built for a spa in the Denver metro.
 therestaurantslist.com	food	PCES	Built for a restaurant directory.
 thevrgalaxy.com	vr	PDBS	Built for an immersive 3D entertainment brand.
-thingstodobelize.com	travel	PGES	Built for a things-to-do guide in Belize.
+thingstodobelize.com	travel	PDGES	Built for a things-to-do guide in Belize.
 thingstodoinmauihawaii.com	travel	PGE	Built for a things-to-do guide on Maui.
-thingstodoinpuertoplata.com	travel	PGE	Built for a things-to-do guide in Puerto Plata.
+thingstodoinpuertoplata.com	travel	PDGE	Built for a things-to-do guide in Puerto Plata.
 thorntondecks.com	trades	PGES	Built for a deck builder in Thornton.
 thorntonmechanic.com	auto	PGES	Built for a mobile mechanic in Thornton.
 thorntonmobilemechanic.com	auto	PGE	Built for a mobile mechanic in Thornton.
@@ -566,16 +579,17 @@ townhomesforsaledenver.com	realestate	PGE	Built for a townhome sales agent in th
 townhousesforsalenearme.com	realestate	PE	Built for a townhome sales agent.
 trailersdenver.com	auto	PGES	Built for a trailer dealer in the Denver metro.
 trailersforsalecolorado.com	auto	PGE	Built for a trailer dealer in Colorado.
+txbusinesslist.com	marketing	PGES	Built for a Texas business directory.
 txsautoinsurance.com	insurance	PES	Built for an insurance agency.
 unitedstatesseo.com	marketing	PCGES	Built for an SEO agency in the United States.
-usabusinesssearch.com	marketing	PCGES	Built for a national business search directory.
+usabusinesssearch.com	marketing	PDCGES	Built for a national business search directory.
 usawalkintub.com	bath	PGES	Built for a walk-in tub dealer in the USA.
 usedcarslongmontco.com	auto	PGES	Built for a used car dealer in Longmont.
-utahwalkintubs.com	bath	PGES	Built for a walk-in tub dealer in Utah.
+utahwalkintubs.com	bath	PDGES	Built for a walk-in tub dealer in Utah.
 vacationapartmenthawaii.com	travel	PGE	Built for a vacation rental manager in Hawaii.
 vacationcondohawaii.com	travel	PGES	Built for a vacation rental manager in Hawaii.
 vacationcondohonolulu.com	travel	PGE	Built for a vacation rental manager in Honolulu.
-vacationcondooahu.com	travel	PGES	Built for a vacation rental manager on Oahu.
+vacationcondooahu.com	travel	PDGES	Built for a vacation rental marketing service on Oahu.
 vacationhomeoahu.com	travel	PXGES	Built for a vacation rental manager on Oahu.
 vacationhomeshonolulu.com	travel	PGE	Built for a vacation rental manager in Honolulu.
 vacationhomesoahu.com	travel	PXGES	Built for a vacation rental manager on Oahu.
@@ -583,38 +597,39 @@ vacationrentalbelize.com	travel	PGE	Built for a vacation rental manager in Beliz
 virtualrealityadventure.com	vr	PDE	Built for a VR experience or attraction brand.
 virtualrealityflightsimulators.com	vr	PE	Built for a flight simulator or training brand.
 virtualrealitymalls.com	vr	PES	Built for a virtual retail platform.
-vivirencostarica.com	realestate	PIGES	Built for a relocation advisor in Costa Rica.
+vivirencostarica.com	realestate	PDIGES	Built for a relocation advisor in Costa Rica.
 vrflyingsimulator.com	vr	PDES	Built for a flight simulator or flight school brand.
 vrmallglobal.com	vr	PXES	Built for a virtual shopping platform.
 vrmallworld.com	vr	PXES	Built for a virtual shopping platform.
-walkintubdenver.com	bath	PGES	Built for a walk-in tub dealer in the Denver metro.
+wabusinesslist.com	marketing	PGES	Built for a Washington business directory.
+walkintubdenver.com	bath	PDGES	Built for a walk-in tub dealer in the Denver metro.
 walkintubguide.com	bath	PCES	Built for a walk-in tub dealer.
-walkintubny.com	bath	PES	Built for a walk-in tub dealer in New York.
-walkintubs4less.com	bath	PCE	Built for a walk-in tub dealer.
-walkintubsarizona.com	bath	PGES	Built for a walk-in tub dealer in Arizona.
-walkintubscalifornia.com	bath	PGE	Built for a walk-in tub dealer in California.
-walkintubschicago.com	bath	PGES	Built for a walk-in tub dealer in Chicago.
+walkintubny.com	bath	PDES	Built for a walk-in tub dealer in New York.
+walkintubs4less.com	bath	PDCE	Built for a walk-in tub dealer.
+walkintubsarizona.com	bath	PDGES	Built for a walk-in tub dealer in Arizona.
+walkintubscalifornia.com	bath	PDGE	Built for a walk-in tub dealer in California.
+walkintubschicago.com	bath	PDGES	Built for a walk-in tub dealer in Chicago.
 walkintubsflorida.com	bath	PDGES	Built for a walk-in tub dealer in Florida.
-walkintubsforelderly.com	bath	PCE	Built for a walk-in tub dealer.
-walkintubshouston.com	bath	PGES	Built for a walk-in tub dealer in Houston.
+walkintubsforelderly.com	bath	PDCE	Built for a walk-in tub dealer.
+walkintubshouston.com	bath	PDGES	Built for a walk-in tub dealer in Houston.
 walkintubsmiami.com	bath	PGES	Built for a walk-in tub dealer in Miami.
 walkintubsokc.com	bath	PGES	Built for a walk-in tub dealer in Oklahoma City.
 walkintubsomaha.com	bath	PGES	Built for a walk-in tub dealer in Omaha.
-walkintubstexas.com	bath	PGES	Built for a walk-in tub dealer in Texas.
-walkintubswithjets.com	bath	PES	Built for a walk-in tub dealer.
-walkintubwithshower.com	bath	PES	Built for a walk-in tub dealer.
+walkintubstexas.com	bath	PDGES	Built for a walk-in tub dealer in Texas.
+walkintubswithjets.com	bath	PDES	Built for a walk-in tub dealer.
+walkintubwithshower.com	bath	PDES	Built for a walk-in tub dealer.
 webdesigndenvercolorado.com	marketing	PGE	Built for a web design studio in the Denver metro.
-webdesignmonument.com	marketing	PGES	Built for a web design studio in Monument.
-websitedesignercoloradosprings.com	marketing	PGE	Built for a web design studio in Colorado Springs.
+webdesignmonument.com	marketing	PDGES	Built for a web design studio in Monument.
+websitedesignercoloradosprings.com	marketing	PDGE	Built for a web design studio in Colorado Springs.
 websitedesignerdenverco.com	marketing	PGE	Built for a web design studio in the Denver metro.
 weddingcateringdenverco.com	food	PGE	Built for a caterer in the Denver metro.
-weightlossglp-1.com	health	PE	Built for a weight-loss clinic.
-westminsterseo.com	marketing	PGES	Built for an SEO agency in Westminster.
+weightlossglp-1.com	health	PDE	Built for a weight-loss clinic.
+westminsterseo.com	marketing	PDGES	Built for an SEO agency in Westminster.
 whatsagentics.com	ai	ES	Built for an AI automation consultancy.
-whatsglp-1.com	health	PE	Built for a GLP-1 and weight-loss clinic.
-wheatridgeseo.com	marketing	PGES	Built for an SEO agency in Wheat Ridge.
+whatsglp-1.com	health	PDE	Built for a GLP-1 and weight-loss clinic.
+wheatridgeseo.com	marketing	PDGES	Built for an SEO agency in Wheat Ridge.
 wheelchairaccessibleshower.com	bath	PCE	Built for an accessibility bath and walk-in tub company.
 windshieldchiprepairdenverco.com	auto	PGE	Built for a windshield replacement shop in the Denver metro.
 windshieldreplacementlittletonco.com	auto	PGE	Built for a windshield replacement shop in Littleton.
-worldvrmall.com	vr	PXDBS	Built for a global virtual shopping platform.
-zacharytyewennstedt.com	events	PDES	Built for a personal brand site.
+worldbusinesssearch.com	marketing	PCES	Built for a global business search directory.
+worldvrmall.com	vr	PDXBS	Built for a global virtual shopping platform.
