@@ -415,6 +415,9 @@ def home(s):
     s = re.sub(r'<div class="hfind" id="hero-finder"><!--hf-->.*?<!--/hf--></div>', lambda m: hero, s, count=1, flags=re.S)
     s = s.replace('<div class="btn-row"><a class="btn btn-p" href="/domains/">Browse the portfolio</a><a class="btn btn-s" href="tel:+18004818638">Call 1-800-481-8638</a></div>',
                   '<div class="btn-row"><a class="btn btn-p" href="/find-it-for-me/">Let us find it for you</a><a class="btn btn-s" href="/domains/">Browse the portfolio</a></div>')
+    # v4: the two paths the owner wants obvious (all domains + developed domains), then the concierge
+    s = s.replace('<div class="btn-row"><a class="btn btn-p" href="/find-it-for-me/">Let us find it for you</a><a class="btn btn-s" href="/domains/">Browse the portfolio</a></div>',
+                  '<div class="btn-row hpaths"><a class="btn btn-p" href="/domains/">See all domains</a><a class="btn btn-s" href="/developed-assets/">Developed domains (live sites)</a><a class="btn btn-s" href="/find-it-for-me/">Let us find it for you</a></div>')
     sec = ('<!--concierge--><section class="tint" id="find"><div class="wrap"><span class="eyebrow">Domain concierge &middot; free to ask</span>'
            '<h2 class="sec-h">Not sure what to search? Tell us about the business.</h2>'
            '<p class="lede" style="margin-bottom:24px">Matching names from the portfolio appear as you type. Tap any you like, send it, and a real person replies with options for your budget &mdash; including when the right move is to register a name yourself.</p>'

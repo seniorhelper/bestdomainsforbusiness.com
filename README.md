@@ -86,7 +86,7 @@ FormSubmit AJAX (`https://formsubmit.co/ajax/…`), handled in `assets/js/finder
 - Age claims only on agingsafelybaths.com and eyetoad.com.
 - No ranking, traffic or citation guarantees on any page.
 - No flashing or blinking animation; all motion respects `prefers-reduced-motion`.
-- `phoenixsworld.com` is excluded from the portfolio and must stay excluded.
+- Two owned names are NOT for sale and must never appear on the site (the owner's personal-name domain and his daughter's site). They are named only in the `# NOT FOR SALE` comment lines at the top of `_build/inventory.tsv`, which is never published.
 - Three Neuralink-adjacent names excluded for trademark exposure — do not re-add.
 
 ## Logo
