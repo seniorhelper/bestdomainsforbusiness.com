@@ -1,4 +1,5 @@
 # domain	category	tags	blurb  (source of truth; run python3 _build/build.py after editing)
+# NOT FOR SALE (owner 2026-10-11): zacharytyewennstedt.com — owned, deliberately excluded from this inventory
 24-7answeringservice.com	prof	PE	Built for an answering service.
 acreageforsaleincolorado.com	realestate	PGE	Built for a land and acreage broker in Colorado.
 actionglobalnews.com	events	PDES	Built for a news publication.
@@ -632,4 +633,3 @@ windshieldchiprepairdenverco.com	auto	PGE	Built for a windshield replacement sho
 windshieldreplacementlittletonco.com	auto	PGE	Built for a windshield replacement shop in Littleton.
 worldbusinesssearch.com	marketing	PCES	Built for a global business search directory.
 worldvrmall.com	vr	PDXBS	Built for a global virtual shopping platform.
-zacharytyewennstedt.com	events	PDES	Built for a personal brand site.
