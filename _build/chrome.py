@@ -4,7 +4,7 @@ existing hand-written pages in sync with the shared chrome."""
 import re, json, html
 
 SITE = "https://bestdomainsforbusiness.com"
-VER = "20261011c"
+VER = "20261011d"
 TEL = "1-800-481-8638"
 
 BBB = ('<a class="bbb" href="https://www.bbb.org/us/co/denver/profile/advertising-agencies/search-converts-llc-1296-90228702/#sealclick" '
@@ -37,11 +37,11 @@ TOOLS_MENU = [
     ("/guides/", "Guides &amp; resources", "Plain-English answers, sourced"),
 ]
 MORE_MENU = [
+    ("/buy-a-domain/", "How buying works", "Pick, agree a number, pay, transfer"),
     ("/find-a-domain/", "Find &amp; acquire a name", "Someone else owns it? We go get it"),
     ("/register-a-domain/", "Register a new name", "Check availability first"),
     ("/sell-your-domain/", "Sell your domain", "We buy and we broker"),
     ("/domain-and-website/", "Domain + website", "A name and a site built on it"),
-    ("/developed-assets/", "Developed assets", "Live sites, not bare names"),
     ("/domain-broker/", "The broker&rsquo;s office", "Walk in. Ninety seconds."),
     ("/hosting/", "Hosting", "Where the name actually lives"),
     ("/does-a-keyword-domain-help-seo/", "Does a keyword domain help SEO?", "The straight answer"),
@@ -64,24 +64,31 @@ def _menu(items, path):
 
 
 def header(path):
-    def top(href, label, cls=""):
+    def top(href, label, cls="", extra=""):
         on = path == href or (href == "/domains/" and path.startswith("/domains/")) or (href == "/blog/" and path.startswith("/blog/"))
         classes = " ".join(x for x in (cls, "on" if on else "") if x)
-        return f'<a href="{href}"' + (f' class="{classes}"' if classes else "") + (' aria-current="page"' if on else "") + f'>{label}</a>'
+        return f'<a href="{href}"' + (f' class="{classes}"' if classes else "") + (' aria-current="page"' if on else "") + f'{extra}>{label}</a>'
     shortcuts = ('<div class="mnav-cats mob-only" aria-label="Browse by category"><p class="mnav-h">Jump to a category</p><div class="mnav-chips">'
                  + "".join(f'<a href="{h}">{l}</a>' for h, l in MOB_SHORTCUTS)
                  + '<a class="mnav-all" href="/domains/#browse-cats">All categories &rarr;</a><a class="mnav-all" href="/domains/by-place/">By city &amp; state &rarr;</a></div></div>')
+    # mobile-only quick paths, always visible under the logo row (no need to open the menu)
+    def q(href, label, cls):
+        on = path == href
+        return f'<a class="{cls}{" on" if on else ""}" href="{href}"' + (' aria-current="page"' if on else "") + f'>{label}</a>'
+    quick = ('<nav class="hdr-quick" aria-label="Quick links">' + q("/domains/", "All domains", "hq-all")
+             + q("/developed-assets/", "Developed domains", "hq-dev") + '</nav>')
     return ('<header class="hdr"><div class="hdr-in">\n'
             f'<a class="brand" href="/" aria-label="Best Domains for Business — home">{LOGO}</a>\n'
-            '<button class="navtog" aria-label="Menu" aria-expanded="false" aria-controls="nav" data-navtog><span></span><span></span><span></span></button>\n'
+            '<button type="button" class="navtog" aria-label="Open menu" aria-expanded="false" aria-controls="nav" data-navtog><span></span><span></span><span></span></button>\n'
             '<nav class="hdr-nav" id="nav" aria-label="Primary">'
-            + top("/domains/", "Browse domains", "nav-browse") + top("/find-it-for-me/", "Find it for me", "nav-find") + "\n" + shortcuts + "\n"
-            + top("/buy-a-domain/", "How buying works")
+            + top("/domains/", 'All domains<small class="mob-only"> Search &amp; filter every name</small>', "nav-browse")
+            + top("/developed-assets/", 'Developed domains<small class="mob-only"> Live websites, not bare names</small>', "nav-dev")
+            + top("/find-it-for-me/", "Find it for me", "nav-find") + "\n" + shortcuts + "\n"
             + f'\n<span class="drop" data-drop><button type="button" aria-expanded="false">Free tools {CHEV}</button><span class="drop-menu">{_menu(TOOLS_MENU, path)}</span></span>'
             + top("/blog/", "Blog")
             + f'\n<span class="drop" data-drop><button type="button" aria-expanded="false">More {CHEV}</button><span class="drop-menu">{_menu(MORE_MENU, path)}</span></span>\n'
             + top("/contact/", "Contact")
-            + f'\n<a class="hdr-tel" href="tel:+18004818638">{TEL}</a></nav></div></header>')
+            + f'\n<a class="hdr-tel" href="tel:+18004818638">{TEL}</a></nav></div>\n' + quick + '</header>')
 
 
 def qbar(n=None):
