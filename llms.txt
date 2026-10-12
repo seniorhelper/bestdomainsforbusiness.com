@@ -62,11 +62,14 @@ What we do: we sell names we own, and we can access almost anything and find alm
 - [Domain Buying Blog: Plain-English Guides](https://bestdomainsforbusiness.com/blog/)
 - [Buying a Website That Already Works: What to Check](https://bestdomainsforbusiness.com/blog/buying-a-website-that-already-works/)
 - [How to Check a Domain's History Before You Buy](https://bestdomainsforbusiness.com/blog/check-a-domains-history-before-you-buy/)
+- [How to Choose a Domain Name for a Law Firm](https://bestdomainsforbusiness.com/blog/choosing-a-domain-name-for-a-law-firm/)
 - [Domain Name Taken? 8 Ways to Still Get a Great One](https://bestdomainsforbusiness.com/blog/domain-name-taken-what-now/)
 - [Domain Scams Targeting Small Businesses: How to Spot Them](https://bestdomainsforbusiness.com/blog/domain-scams-that-target-small-businesses/)
 - [Exact-Match Domains for Local Businesses: What Google Says](https://bestdomainsforbusiness.com/blog/exact-match-local-domains-what-google-says/)
 - [How a Domain Transfer Works: Auth Codes and Escrow](https://bestdomainsforbusiness.com/blog/how-a-domain-transfer-actually-works/)
 - [How to Buy a Domain Someone Else Owns](https://bestdomainsforbusiness.com/blog/how-to-buy-a-domain-someone-else-owns/)
+- [How to Choose a Domain Name for an AI Startup](https://bestdomainsforbusiness.com/blog/how-to-choose-a-domain-name-for-an-ai-startup/)
+- [How to Name a Home Services Business (and Its Domain)](https://bestdomainsforbusiness.com/blog/how-to-name-a-home-services-business/)
 - [Moving to a Better Domain Without Losing Your SEO](https://bestdomainsforbusiness.com/blog/move-to-a-new-domain-without-losing-seo/)
 - [Pick a Business Name That Passes the Phone Test](https://bestdomainsforbusiness.com/blog/picking-a-business-name-that-passes-the-phone-test/)
 - [Should a Business Own More Than One Domain?](https://bestdomainsforbusiness.com/blog/should-a-business-own-more-than-one-domain/)
@@ -90,4 +93,4 @@ What we do: we sell names we own, and we can access almost anything and find alm
 - Acquisition of names owned by others: $1,500 engagement fee, then 15% of the purchase price on close (15% or $1,500, whichever is greater). See /find-a-domain/.
 - After payment clears, the buyer receives the authorization code the same business day; registrars control transfer timing.
 - Language: English. Questions are answered by email or phone by a real person.
-- Inventory last rebuilt: 2026-10-11.
+- Inventory last rebuilt: 2026-10-12.
