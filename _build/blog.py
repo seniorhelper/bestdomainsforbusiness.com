@@ -25,8 +25,10 @@ def _art(key, c1, c2, glyph, label, sub):
 POSTS = []
 
 
-def post(slug, title, desc, h1, section, lede, art, sections, faqs, srcs, related):
+def post(slug, title, desc, h1, section, lede, art, sections, faqs, srcs, related, date="2026-10-11"):
     path = f"/blog/{slug}/"
+    _y, _m, _d = (int(x) for x in date.split("-"))
+    pubtxt = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"][_m - 1] + f" {_d}, {_y}"
     body = "".join(f'<h2 id="{a}">{h}</h2>\n{b}\n' for a, h, b in sections)
     words = len(_re.sub(r"<[^>]+>", " ", body).split())
     minutes = max(4, round(words / 230))
@@ -36,7 +38,7 @@ def post(slug, title, desc, h1, section, lede, art, sections, faqs, srcs, relate
     main = ('<section style="padding:44px 0 6px"><div class="wrap narrow">' + C.crumbs_html(crumbs) +
             f'<span class="eyebrow">{section}</span>\n<h1 style="font-size:clamp(1.9rem,4.8vw,3rem)">{h1}</h1>\n'
             f'<p class="lede" style="margin-top:16px">{lede}</p>\n'
-            f'<p class="artmeta"><span>By Zachary Tye Wennstedt</span><span>Eye To Ad Media, Denver</span><span>{minutes} min read</span><span>Published October 11, 2026</span></p>\n'
+            f'<p class="artmeta"><span>By Zachary Tye Wennstedt</span><span>Eye To Ad Media, Denver</span><span>{minutes} min read</span><span>Published {pubtxt}</span></p>\n'
             f'</div></section>\n<div class="wrap narrow" style="padding-bottom:6px">{_art("a" + slug[:6].replace("-", ""), *art)}</div>\n'
             f'<section style="padding-top:26px"><div class="wrap narrow article body">\n{toc}\n{body}'
             '<p class="srcs" style="margin-top:28px"><b>Sources, none of them ours:</b> ' + " &middot; ".join(f'<a href="{u}" rel="noopener" target="_blank">{t}</a>' for t, u in srcs) + '</p>'
@@ -48,11 +50,11 @@ def post(slug, title, desc, h1, section, lede, art, sections, faqs, srcs, relate
             f'<section><div class="wrap narrow"><div class="related"><span class="eyebrow">Keep going</span><div class="hubstrip">{rel}</div></div></div></section>\n' + CLOSE)
     art_ld = {"@type": "BlogPosting", "@id": C.SITE + path + "#post", "headline": _html.unescape(_re.sub("<[^>]+>", "", h1)), "description": desc,
               "url": C.SITE + path, "mainEntityOfPage": {"@id": C.SITE + path + "#page"}, "author": {"@id": C.SITE + "/#author"},
-              "publisher": {"@id": C.SITE + "/#org"}, "datePublished": "2026-10-11", "dateModified": TODAY, "inLanguage": "en-US",
+              "publisher": {"@id": C.SITE + "/#org"}, "datePublished": date, "dateModified": TODAY, "inLanguage": "en-US",
               "isPartOf": {"@id": C.SITE + "/blog/#blog"}, "articleSection": _html.unescape(section), "wordCount": words,
               "image": C.SITE + "/images/business-domains-for-sale.jpg"}
     write(path, C.page(path, title, desc, crumbs, main, N, [AUTHOR, art_ld, C.faq_ld(faqs)]))
-    POSTS.append(dict(path=path, h1=h1, desc=desc, section=section, minutes=minutes, art=art, slug=slug, words=words))
+    POSTS.append(dict(path=path, h1=h1, desc=desc, section=section, minutes=minutes, art=art, slug=slug, words=words, date=date))
 
 
 G = dict(
@@ -354,14 +356,202 @@ post("should-a-business-own-more-than-one-domain",
      [("/domains/", "Browse domains"), ("/blog/exact-match-local-domains-what-google-says/", "Exact-match local domains"), ("/guides/domain-email-dns-transfer/", "Email &amp; DNS guide"), ("/sell-your-domain/", "Sell a domain you don't need"), ("/find-it-for-me/", "Find it for me")])
 
 
+# ------------------------------------------------------------------ added 2026-10-12 (three buyer-intent posts)
+G.update(
+    iana_ai="https://www.iana.org/domains/root/db/ai.html",
+    multireg="https://developers.google.com/search/docs/specialty/international/managing-multi-regional-sites",
+    dnib="https://www.dnib.com/articles/the-domain-name-industry-brief-q2-2026",
+    tm_strong="https://www.uspto.gov/trademarks/basics/strong-trademarks",
+    tm_search="https://www.uspto.gov/trademarks/basics/why-search-similar-trademarks",
+    aba71="https://www.americanbar.org/groups/professional_responsibility/publications/model_rules_of_professional_conduct/rule_7_1_communication_concerning_a_lawyer_s_services/comment_on_rule_7_1/",
+    co_trade="https://www.sos.state.co.us/pubs/business/FAQs/tradeNames.html",
+    co_tm="https://www.sos.state.co.us/pubs/business/FAQs/trademarks.html",
+)
+
+
+def _x(key, text):
+    """External link in the house style (opens in a new tab, no referrer games)."""
+    return f'<a href="{G[key]}" rel="noopener" target="_blank">{text}</a>'
+
+
+# ------------------------------------------------------------------ 6
+post("how-to-choose-a-domain-name-for-an-ai-startup",
+     "How to Choose a Domain Name for an AI Startup",
+     "Should an AI company use .ai or .com, put AI in the name, or go brandable? A practical checklist on extensions, trademarks, the phone test and resale.",
+     "How to choose a domain name for an AI startup.",
+     "AI names",
+     "Every AI founder hits the same three questions in the first week: .ai or .com, whether the word AI belongs in the name, and whether to describe the product or invent a brand. Here is how to answer each one with sources rather than hunches.",
+     ("#06261c", "#0b7a53", "yourproduct.ai or .com?", "An AI startup name being compared across two extensions", "Name it to last."),
+     [("a1", "Start with what the name has to do",
+       "<p>Before you look at a single extension, write down who has to find you and how. An AI product sold self-serve to developers lives and dies on a short, memorable brand that people pass around in chat and code. An AI <em>service</em> sold to local businesses, such as setting up agents for an accounting firm or running AI tools for a marketing team, usually wins on a name that explains itself on a phone call. Those are different jobs, and the right domain for one is often wrong for the other.</p>"
+       "<p>Three questions narrow it quickly:</p>"
+       "<ul><li><strong>Who types it?</strong> Technical buyers tolerate an unusual spelling; a busy owner hearing your name on a podcast will not.</li>"
+       "<li><strong>Will the product change?</strong> Most AI products pivot at least once. A name tied to one feature can age badly.</li>"
+       "<li><strong>Is this the company or a campaign?</strong> A company name needs to last; a campaign or lead-generation name can be literal and temporary.</li></ul>"),
+      ("a2", "The .ai versus .com question",
+       f"<p>It helps to know what .ai actually is. According to the {_x('iana_ai', 'IANA root zone database')}, .ai is the country-code top-level domain of Anguilla, and its manager of record is the Government of Anguilla. It became the default AI extension because of the letters, not because of anything technical.</p>"
+       f"<p>For search, the extension matters less than people fear. Google's guide to {_x('multireg', 'multi-regional and multilingual sites')} lists .ai among the country-code extensions it treats as generic, meaning it is not read as a signal that your site targets Anguilla (Google notes that list can change). The {_x('starter', 'SEO Starter Guide')} goes further and says the extension only matters if you are targeting a specific country's users, and even then it is usually a low-impact signal.</p>"
+       f"<p>Where the extension does matter is people. The {_x('dnib', 'Verisign Domain Name Industry Brief')} still ranks .com as the largest top-level domain by registrations, and that habit shows up in typing and email. If you build on <em>yourbrand.ai</em> and someone else owns <em>yourbrand.com</em>, some of your visitors and some of your email will go to them. That is a nuisance if the .com is an unrelated parked page and a real problem if it is a competitor.</p>"
+       "<p>Two practical notes on .ai itself. Policies for a country-code extension are set by its registry rather than by the contracts that govern .com, so read your registrar's terms for .ai registration periods, renewals and transfers instead of assuming they match. And put renewals on auto-pay with a backup card; losing a startup's main domain to an expired card is an avoidable disaster. Our guide <a href=\"/guides/com-vs-other-extensions/\">should your business domain be a .com?</a> covers the trade-off for every common extension.</p>"),
+      ("a3", "Should AI be in the name at all?",
+       "<p>Putting AI in the name gives an instant category signal. Right now that is useful: a buyer scanning a list knows what you do. It also has three costs worth weighing.</p>"
+       f"<ul><li><strong>Trademark strength.</strong> The USPTO's page on {_x('tm_strong', 'strong trademarks')} explains that descriptive marks are weak and harder to protect, while invented and arbitrary words are the strongest. A name that is mostly the word AI plus a generic noun is close to descriptive.</li>"
+       "<li><strong>Crowding.</strong> Many new companies are making the same move, so an AI-plus-noun name can blur into its neighbours in search results, app stores and conversation.</li>"
+       "<li><strong>Shelf life.</strong> If AI becomes as assumed in software as the internet is, a name built on the label may feel dated. That is a judgement call, not a prediction.</li></ul>"
+       "<p>One thing AI in the domain will not do is rank you. Google's starter guide says keywords in a domain name alone have hardly any effect beyond appearing in breadcrumbs. Choose the word for people, not for an algorithm.</p>"),
+      ("a4", "Descriptive, brandable, or both",
+       "<p>There are three workable patterns for an AI company, and each fits a different business:</p>"
+       "<ul><li><strong>Descriptive.</strong> The name is the service: AI agent setup, AI for accounting firms, learning to use AI agents. Best for service businesses, courses and lead-generation sites, because the name answers the caller's first question.</li>"
+       "<li><strong>Brandable.</strong> An invented or borrowed word with no keyword to carry. Best for venture-backed products expected to grow beyond one feature, and strongest for trademark purposes.</li>"
+       "<li><strong>Hybrid.</strong> A short brand word plus a hint of the category. A good compromise when you need memorability and a clue to what you do.</li></ul>"
+       "<p>If you are torn, our six-question <a href=\"/keyword-vs-brand-domain/\">keyword or brand domain helper</a> shows its reasoning as you answer. You can also browse real examples of both styles on our <a href=\"/domains/ai-agents/\">AI and agents domain names</a> page, every one owner-direct and negotiable.</p>"),
+      ("a5", "Clear the trademark before you fall in love",
+       f"<p>AI naming has a specific trap: names that lean on a famous model, lab or product. They feel clever, attract attention, and invite a letter from a legal department. The USPTO explains {_x('tm_search', 'why to search for similar trademarks')} before you commit: an application can be refused for likelihood of confusion with an existing mark when the names are similar and the goods or services are related, and they do not need to be identical to count. The USPTO also says the examiner only checks the federal database, so state registrations and ordinary internet use are your job to search.</p>"
+       f"<p>If someone else owns a domain that copies your registered mark in bad faith, ICANN's {_x('udrp', 'Uniform Domain-Name Dispute-Resolution Policy')} is the usual route for generic extensions. The same process can be used against you if your name copies theirs. A short session with a trademark attorney before launch costs far less than a rebrand after it.</p>"),
+      ("a6", "Run the phone test and the spelling test",
+       "<p>AI brands love dropped vowels, doubled letters and invented endings. Each one adds a chance that someone types the name wrong. Say the name once to a friend who has never heard it and ask them to type it. If they hesitate, ask whether the cleverness is worth the leak. Our <a href=\"/domain-name-checker/\">domain name checker</a> scores length, hyphens, numerals, word count and clarity, and shows every rule it applies, and <a href=\"/blog/picking-a-business-name-that-passes-the-phone-test/\">picking a name that passes the phone test</a> explains the thinking behind it.</p>"),
+      ("a7", "Check the name's past",
+       "<p>Plenty of short, AI-flavoured names have been registered before, sometimes for projects that left a poor reputation behind: spam, scraped content or an abandoned crypto token. Look at the Wayback Machine, run a site: search and check the registration record before you pay. Our walk-through, <a href=\"/blog/check-a-domains-history-before-you-buy/\">how to check a domain's history</a>, takes about ten minutes.</p>"),
+      ("a8", "Plan a small, sensible set",
+       "<p>Once you have the main name, consider the .com or .ai counterpart if it is available, and the most likely misspelling. Point them at your main site with permanent redirects. Resist building separate thin sites on each variation; Google's spam policies describe many near-identical sites aimed at small variations of a search as doorway abuse. Our article on <a href=\"/blog/should-a-business-own-more-than-one-domain/\">owning more than one domain</a> covers the setup.</p>"),
+      ("a9", "A one-page checklist",
+       "<ol><li>Decide whether this is a company name, a product name or a campaign name.</li>"
+       "<li>Pick a pattern: descriptive for services, brandable for products, hybrid if you need both.</li>"
+       "<li>Choose the extension for people, then check who owns the other one.</li>"
+       "<li>Search the USPTO database, state records and the open web for similar names in related fields.</li>"
+       "<li>Run the phone test and the checker.</li>"
+       "<li>Check the domain's history before paying.</li>"
+       "<li>Secure the counterpart and the obvious misspelling, and redirect them.</li></ol>"
+       "<p>If the name you want is taken, it is rarely the end; <a href=\"/blog/domain-name-taken-what-now/\">here is what to do next</a>. And if you would rather hand the search to someone who does this every day, tell us about the product on <a href=\"/find-it-for-me/\">find it for me</a>. We start with the names we own, then the low-hanging fruit still open to register, then the hidden gems other people hold.</p>")],
+     [("Is a .ai domain bad for SEO?", "No. Google lists .ai among the country-code extensions it treats as generic, and its SEO Starter Guide says the extension is a low-impact signal at most. The bigger risks with .ai are visitors typing .com by habit and renewal terms you have not read."),
+      ("Should my AI startup put AI in its domain name?", "It is a fair choice for a service business that wants an obvious category signal. For a product that may grow or pivot, a brandable name is usually easier to protect as a trademark and less likely to date."),
+      ("Do I need to own both the .ai and the .com?", "Not always, but check who owns the one you do not buy. An unrelated parked page is a minor leak; a competitor on the other extension is a reason to choose a different name."),
+      ("How do I check whether an AI name is already trademarked?", "Search the USPTO's federal trademark database, your state's records and the open web for similar names used for related goods or services. A trademark attorney can run and interpret a full clearance search.")],
+     [("IANA .ai delegation record", G["iana_ai"]), ("Google: multi-regional sites (generic ccTLDs)", G["multireg"]), ("Google SEO Starter Guide", G["starter"]),
+      ("Verisign Domain Name Industry Brief, Q2 2026", G["dnib"]), ("USPTO: strong trademarks", G["tm_strong"]), ("USPTO: why search for similar trademarks", G["tm_search"]), ("ICANN UDRP", G["udrp"])],
+     [("/domains/ai-agents/", "AI &amp; agents domains"), ("/keyword-vs-brand-domain/", "Keyword or brand?"), ("/domain-name-checker/", "Domain name checker"), ("/guides/com-vs-other-extensions/", ".com vs other extensions"), ("/find-it-for-me/", "Find it for me")],
+     date="2026-10-12")
+
+# ------------------------------------------------------------------ 7
+post("choosing-a-domain-name-for-a-law-firm",
+     "How to Choose a Domain Name for a Law Firm",
+     "Partner names, practice-area phrases or a trade name? How the ABA model rule treats firm names and web addresses, and how to pick a law firm domain that lasts.",
+     "Choosing a domain name for a law firm: the ethics rules, the practical tests and what lasts.",
+     "Legal names",
+     "A law firm's domain is not just marketing. Under the ABA's model rules it counts as a professional designation, which means the same not-misleading standard that applies to your letterhead applies to your web address. Here is how to pick one that passes both the ethics test and the phone test.",
+     ("#141d4a", "#2246b8", "yourfirm.com", "A law firm's name on an office door and a web address", "Name, not slogan."),
+     [("l1", "Your domain is a professional designation",
+       f"<p>The ABA's {_x('aba71', 'comment to Model Rule 7.1')} says firm names, letterhead and professional designations are communications about a lawyer's services. It allows a firm to be designated by the names of some or all of its current members, by the names of deceased members where there has been a succession in the firm's identity, or by a trade name that is not false or misleading. It then adds the line that matters here: a lawyer or law firm may also be designated by a distinctive website address, social media username or comparable professional designation that is not misleading.</p>"
+       "<p>In plain terms, your domain is judged like your firm name. Two caveats before going further. First, the model rules are a template; your state's adopted version is what binds you, and some states restrict trade names more tightly than the model rule does. Second, this article is practical guidance from people who sell domains, not legal advice. If a name feels borderline, ask your state bar's ethics hotline before you buy it.</p>"),
+      ("l2", "What makes a law firm name misleading",
+       "<p>The same ABA comment lists the classic problems. A firm name or designation is misleading if it implies a connection with:</p>"
+       "<ul><li>a government agency,</li><li>a deceased lawyer who was not a former member of the firm,</li><li>a lawyer not associated with the firm or a predecessor firm,</li><li>a nonlawyer, or</li><li>a public or charitable legal services organization.</li></ul>"
+       "<p>It also flags geographic trade names. Its example is a name like Springfield Legal Clinic, which may need an express statement that the firm is not a public legal aid organization. Translate that to domains and a few patterns deserve a second look: anything with words like <em>legal aid</em>, <em>public defender</em>, <em>county</em> or <em>state</em> that could suggest an official body, and anything that borrows the name of a lawyer who is not at your firm.</p>"
+       "<p>Superlatives are the other trap. The comment to Rule 7.1 warns that an unsubstantiated claim or comparison about a lawyer's services can be misleading if it is presented with enough specificity that a reasonable person would think it can be substantiated. A domain that calls a firm the best or the top in a city is a claim. Whether a given name crosses the line depends on your jurisdiction, so check before you build a practice on it.</p>"),
+      ("l3", "The three patterns that work",
+       "<p><strong>Partner surnames.</strong> The traditional choice, and the most clearly permitted. It is also the most fragile online: surnames are often hard to spell after hearing them once, long multi-partner names make long domains, and a name partner leaving raises questions under your state's rules. If you go this way, consider a short form people actually say.</p>"
+       "<p><strong>Practice area plus place.</strong> Names in the form of a practice and a city, such as a DUI attorney or divorce lawyer name for one town, explain themselves to a caller and are easy to remember from a radio spot or a bus bench. They are descriptive, so they are weak as trademarks, and they tie you to one practice and one market. Many firms use one as a second front door that redirects to the main site.</p>"
+       "<p><strong>A trade name.</strong> Permitted in many jurisdictions if it is not misleading, and the most flexible as a brand. Check your state's version of the rule first, and make sure the trade name appears consistently on letterhead, signage and filings, not only in the web address.</p>"
+       "<p>You can see real examples of the second pattern on our <a href=\"/domains/legal/\">legal and mediation domain names</a> page, including a cluster of <a href=\"/domains/greeley-lawyers/\">Greeley, Colorado lawyer names</a>. Every one is owner-direct and negotiable.</p>"),
+      ("l3b", "A note for solo practitioners",
+       "<p>Solo lawyers have the simplest path and often overthink it. Your own name plus a short word such as <em>law</em> or the practice area is clearly permitted under the model rule's approach to member names, is easy to say in court and on the phone, and moves with you if you later join or start a firm. If your full name is long or often misspelled, test a shorter form, such as first initial and surname, and redirect the full version to it.</p>"
+       "<p>What to avoid as a solo: a name that sounds like a large firm with several partners when there is one lawyer, or a plural like <em>attorneys</em> or <em>group</em> that could suggest colleagues you do not have. Under a not-misleading standard, a domain that overstates the size of a practice is exactly the kind of thing to check with your state bar first.</p>"),
+      ("l4", "The practical tests",
+       "<p>Once a name clears the ethics question, it still has to work in the real world. Clients often hear a firm's name in a stressful moment, from a friend, a referral or a phone call, and then type it from memory.</p>"
+       "<ul><li><strong>The phone test.</strong> Say it once and see whether someone can type it. Hyphens, numerals, doubled letters at word breaks and unusual surname spellings all leak clients. Our <a href=\"/domain-name-checker/\">domain name checker</a> shows exactly where a name loses points.</li>"
+       "<li><strong>Length.</strong> Shorter is easier to say, print and type on a phone. A practice-and-city name can still be short if both words are common.</li>"
+       f"<li><strong>Extension.</strong> Google's {_x('starter', 'SEO Starter Guide')} says the extension only matters for country targeting, and even then it is a low-impact signal. People still type .com by habit, so if you choose another extension, check who owns the .com version. If any legal-specific extension interests you, read its registry's eligibility rules first.</li>"
+       "<li><strong>Email.</strong> You will read this domain aloud in every email address you give out. If it is awkward to spell for a court clerk, it is the wrong domain.</li></ul>"),
+      ("l5", "Do not rename your Google profile to match the domain",
+       f"<p>A descriptive domain does not change what you can call yourself on Google Maps. Google's {_x('gbp', 'guidelines for representing your business')} say the profile name should reflect the business's real-world name as used on its storefront, website and stationery, and that adding unnecessary information to the name is not permitted and can lead to suspension. If your firm is Martinez &amp; Cole, your profile is Martinez &amp; Cole, even if your redirect domain says DUI lawyer Greeley.</p>"
+       "<p>That is a reason to choose the main domain to match the name you actually practise under, and to use descriptive names as secondary doors rather than as a back door to a keyword-stuffed listing.</p>"),
+      ("l6", "One site, several doors",
+       f"<p>Firms with several practice areas are often tempted to build a separate small site on each descriptive domain. Two problems. Every one of those sites is attorney advertising and has to meet your state's rules. And a set of thin, near-identical sites aimed at slight variations of the same search is what Google's {_x('spam', 'spam policies')} call doorway abuse. The cleaner setup is one strong main site with a genuinely useful page for each practice area, and any extra domains pointed at the matching page with permanent redirects. Our article on <a href=\"/blog/should-a-business-own-more-than-one-domain/\">owning more than one domain</a> shows how to set that up.</p>"),
+      ("l7", "Before you buy",
+       f"<ol><li>Check your state's version of Rule 7.1 and any ethics opinions on trade names and web addresses.</li>"
+       f"<li>Search the {_x('tm_search', 'USPTO trademark database')} and your state's business records for similar names in legal services.</li>"
+       "<li>Check the domain's past on the Wayback Machine and with a site: search. A law firm does not want to inherit a spam history; our <a href=\"/blog/check-a-domains-history-before-you-buy/\">history checklist</a> takes ten minutes.</li>"
+       "<li>Confirm the name works on letterhead, a business card, an email signature and a voicemail greeting.</li>"
+       "<li>Put it on auto-renew with the registrar lock and two-factor login on.</li></ol>"
+       "<p>If you know the practice and the market but not the name, tell us on <a href=\"/find-it-for-me/\">find it for me</a>. We look at our own names first, then what is still open to register, then the hidden gems held by other owners, and we will tell you plainly if a name you like looks risky.</p>")],
+     [("Can a law firm use a domain name that is not the firm's name?", "Under the ABA model rule, a firm may be designated by a distinctive website address that is not misleading. Your state's version of the rule controls, so check it and any related ethics opinions before you rely on a descriptive or trade-name domain."),
+      ("Is it allowed to use best or top in a law firm domain?", "It is risky. The comment to ABA Model Rule 7.1 says unsubstantiated claims or comparisons can be misleading. Whether a particular name crosses the line depends on your jurisdiction, so ask your state bar before buying one."),
+      ("Can I put my practice area in my Google Business Profile name?", "Only if it is genuinely part of your real-world business name. Google's guidelines say adding unnecessary information to the name is not permitted and can lead to suspension."),
+      ("Should a law firm have a separate website for each practice area?", "Usually not. One main site with a strong page for each practice area is easier to keep compliant, and extra domains can redirect to those pages instead of hosting thin copies.")],
+     [("ABA: Comment on Model Rule 7.1", G["aba71"]), ("Google Business Profile guidelines", G["gbp"]), ("Google spam policies", G["spam"]), ("Google SEO Starter Guide", G["starter"]),
+      ("USPTO: why search for similar trademarks", G["tm_search"])],
+     [("/domains/legal/", "Legal &amp; mediation domains"), ("/domains/greeley-lawyers/", "Greeley lawyer names"), ("/domain-name-checker/", "Domain name checker"), ("/blog/check-a-domains-history-before-you-buy/", "Check a domain's history"), ("/find-it-for-me/", "Find it for me")],
+     date="2026-10-12")
+
+# ------------------------------------------------------------------ 8
+post("how-to-name-a-home-services-business",
+     "How to Name a Home Services Business (and Its Domain)",
+     "Naming a roofing, painting, fencing or cleaning company? How to pick a name and domain that work on a truck, a phone call, Google Maps and your state filing.",
+     "How to name a home services business, and pick a domain that fits it.",
+     "Naming a business",
+     "A roofer's name has to work in places a software brand never sees: a truck door at forty miles an hour, a yard sign, a rushed phone call, an invoice. Here is a practical way to choose a home services name and a domain that fits it, with the rules from Google and the state that most people find out about too late.",
+     ("#5a2a06", "#f26b1d", "yourtrade.com", "A home services truck with a business name and web address", "Built for the truck."),
+     [("h1", "Where a home services name has to work",
+       "<p>Most naming advice is written for apps. A painter, fence builder, mover or house cleaner has a different set of tests, and the name either passes them or quietly costs calls for years:</p>"
+       "<ul><li><strong>The truck and the yard sign.</strong> Read at a distance, often for a second or two. Short words, no hyphens, nothing that needs explaining.</li>"
+       "<li><strong>The phone.</strong> Customers hear your name from a neighbour and type it later. If they get it wrong, the call goes to whoever ranks for the misspelling.</li>"
+       "<li><strong>Google Maps.</strong> Your profile name has rules (more on that below), and it must match what is on the truck.</li>"
+       "<li><strong>The paperwork.</strong> Licences, insurance certificates, invoices and your state filing should all carry the same name.</li></ul>"),
+      ("s2", "Three kinds of name, and what each costs you",
+       "<p><strong>Your own name</strong>, as in Ortega Plumbing. Personal, trustworthy, easy to protect. The cost: it says nothing about where you work, unusual surnames are hard to spell, and it can be harder to sell the business later because the name is you.</p>"
+       "<p><strong>A brand</strong>, a memorable word or phrase. Flexible and easier to protect. The cost: it takes longer for people to connect the name with the trade, so you spend more on signage and ads early on.</p>"
+       "<p><strong>A descriptive name</strong>, the service plus the place, such as a deck builder name for one Denver suburb. It explains itself on a truck and a phone call. The cost: it is weak as a trademark, and it can box you in. A company named for decks that later adds fences, or for one suburb that expands across the metro, may outgrow the name.</p>"
+       "<p>A common answer is to combine them: a short company name that can grow, and a descriptive domain or two that point at the matching service pages. Our <a href=\"/keyword-vs-brand-domain/\">keyword or brand helper</a> walks through the trade-off in six questions.</p>"),
+      ("s3", "The Google Maps rule most owners learn too late",
+       f"<p>Google's {_x('gbp', 'guidelines for representing your business')} say your Business Profile name should reflect your real-world name, as used consistently on your storefront, website and stationery and as known to customers. They also say including unnecessary information in the name is not permitted and can lead to suspension.</p>"
+       "<p>That has a direct consequence for naming. If you want the words <em>roofing</em> or <em>Denver</em> to appear in your Maps listing, they have to be part of your genuine business name, on the truck, the invoices and your filing. You cannot run as Smith Construction everywhere else and call yourself Denver Roof Repair Experts on Google. Decide early which name you will actually trade under, because changing it later means new signage, new filings and a profile that has to be re-verified.</p>"),
+      ("s4", "File the name with your state",
+       f"<p>Most states require you to register a name you trade under if it is not your legal name. In Colorado, the {_x('co_trade', 'Secretary of State trade name FAQ')} explains that a for-profit business using a name other than its true entity name, or an individual using a name other than their legal first and last name, must file a statement of trade name. The same page notes that a trade name cannot be reserved in advance.</p>"
+       f"<p>A trade name filing is not a trademark. The Colorado Secretary of State's {_x('co_tm', 'trademark FAQ')} treats trademarks as a separate filing, and neither one is a federal registration. If you plan to grow beyond one market, look at the USPTO database too. The USPTO explains {_x('tm_search', 'why to search for similar trademarks')}: names can conflict when they are similar and the services are related, even if they are not identical. Two fence companies with near-identical names in the same metro is exactly the confusion the law cares about, and it is bad for business even when nobody sues.</p>"),
+      ("s5", "What the domain does, and does not, do",
+       f"<p>A city-and-service domain will not rank you on its own. Google's {_x('starter', 'SEO Starter Guide')} says keywords in a domain name alone have hardly any effect beyond appearing in breadcrumbs. Rankings come from the site, the service pages, reviews and a consistent profile. We cover the details in <a href=\"/blog/exact-match-local-domains-what-google-says/\">exact-match domains for local businesses</a>.</p>"
+       "<p>What a descriptive domain genuinely does is make you easy to remember and easy to type. Someone who saw a truck that said a painter name plus the town can find it again. That is worth a lot in a trade where most work comes from referrals, signs and repeat customers.</p>"
+       "<p>Whatever you choose, run it through the phone test. Say it once; can a stranger type it? Our <a href=\"/domain-name-checker/\">domain name checker</a> scores hyphens, numerals, length and word count, and <a href=\"/blog/picking-a-business-name-that-passes-the-phone-test/\">this article on the phone test</a> explains why each one matters.</p>"),
+      ("s5b", "Putting the domain on the truck",
+       "<p>Once you have a domain, it should be on every vehicle, sign and invoice, and it should be printed the way people will type it. Leave off the <em>www</em> and the <em>https</em>; neither is needed and both make the line longer. If the domain joins several words, consider capitalising the start of each word on the truck so it reads at a glance, even though people will type it in lower case. Keep the phone number and the domain on the same panel, large enough to read from the next lane.</p>"
+       "<p>Then make sure the address goes somewhere useful. A visitor who typed your domain from a van has one question: can you do my job, where I live, soon? Send them to a page that answers that, with your service area and a phone number at the top, not to a generic homepage slideshow.</p>"),
+      ("s6", "Avoid the near-copy",
+       "<p>When the obvious name is taken, the temptation is to bolt on a letter, a hyphen or a different suburb and use something that looks almost the same as a competitor's. Customers will mix you up, reviews will land on the wrong business, and you may invite a trademark complaint. Pick something clearly your own. If the name you want is held by someone who is not using it, <a href=\"/blog/how-to-buy-a-domain-someone-else-owns/\">buying it properly</a> is often cheaper than years of confusion.</p>"),
+      ("s7", "A worked example",
+       "<p>Imagine a painter starting out in Arvada, Colorado. She is weighing three options: her own surname plus Painting, a brand word, or a descriptive name for painters in Arvada.</p>"
+       "<ul><li>She expects to work across the west metro within two years, so a name tied only to Arvada would be limiting as the <em>company</em> name.</li>"
+       "<li>Her surname is easy to spell, so she trades under it, files the trade name with the state and puts it on the van and her Google profile.</li>"
+       "<li>She also secures a descriptive painters-and-town domain and redirects it to her Arvada page, so people who remember the van can still find her.</li></ul>"
+       "<p>One trading name everywhere, one website, one extra door. Nothing that breaks Google's rules, nothing she will outgrow.</p>"),
+      ("s8", "A short checklist",
+       "<ol><li>Decide which name you will genuinely trade under, on the truck, the invoices and Google.</li>"
+       "<li>Check that it will still fit if you add services or towns.</li>"
+       "<li>Search your state's business records and the USPTO database for similar names in your trade.</li>"
+       "<li>File the trade name if it differs from your legal name.</li>"
+       "<li>Choose the domain: the trading name if you can get it, plus a descriptive door if it helps people find you.</li>"
+       "<li>Run the phone test, then put the domain on auto-renew with the lock on.</li></ol>"
+       "<p>Browse ready-to-use names by trade on our <a href=\"/domains/home-services/\">home services and trades</a> page, or by niche: <a href=\"/domains/painters/\">painters</a>, <a href=\"/domains/decks-and-fences/\">decks and fences</a>, <a href=\"/domains/movers/\">movers</a> and <a href=\"/domains/cleaning-moving/\">cleaning and moving</a>. Most are tied to a real market such as <a href=\"/domains/denver/\">the Denver metro</a> or <a href=\"/domains/colorado/\">Colorado</a>. If yours is not there, tell us the trade and the town on <a href=\"/find-it-for-me/\">find it for me</a> and we will go looking.</p>")],
+     [("Does my home services business name have to match my Google Business Profile?", "Yes. Google's guidelines say the profile name should reflect your real-world name as used on your storefront, website and stationery, and that adding unnecessary information can lead to suspension."),
+      ("Do I need to register a trade name in Colorado?", "According to the Colorado Secretary of State, a for-profit business using a name other than its true entity name, or an individual using a name other than their legal name, must file a statement of trade name."),
+      ("Will a city-and-service domain help my business rank?", "Not by itself. Google's SEO Starter Guide says keywords in a domain name alone have hardly any effect. A descriptive domain mainly helps people remember and type your address."),
+      ("Should I name my company after my town?", "Only if you expect to stay there. A town in the company name can limit you when you expand; a town in a secondary domain that redirects to a location page does not.")],
+     [("Google Business Profile guidelines", G["gbp"]), ("Colorado SOS: trade names FAQ", G["co_trade"]), ("Colorado SOS: trademarks FAQ", G["co_tm"]), ("Google SEO Starter Guide", G["starter"]),
+      ("USPTO: why search for similar trademarks", G["tm_search"])],
+     [("/domains/home-services/", "Home services domains"), ("/domains/painters/", "Painter names"), ("/domains/decks-and-fences/", "Deck &amp; fence names"), ("/blog/exact-match-local-domains-what-google-says/", "Exact-match local domains"), ("/find-it-for-me/", "Find it for me")],
+     date="2026-10-12")
+
+
 # ------------------------------------------------------------------ blog index + guides hub hooks
 def _card(p):
     return (f'<a class="post" href="{p["path"]}">{_art("c" + p["slug"][:6].replace("-", ""), *p["art"])}'
             f'<span class="post-b"><h3>{p["h1"]}</h3><p>{esc(p["desc"])}</p><span class="meta">{p["section"]} &middot; {p["minutes"]} min read</span></span></a>')
 
 
+_NEWEST = sorted(POSTS, key=lambda p: p["date"], reverse=True)  # stable: same-day posts keep their order
+
+
 def _blog_index(s):
-    cards = "<!--newposts-->" + "".join(_card(p) for p in POSTS) + "<!--/newposts-->"
+    cards = "<!--newposts-->" + "".join(_card(p) for p in _NEWEST) + "<!--/newposts-->"
     if "<!--newposts-->" in s:
         s = _re.sub(r"<!--newposts-->.*?<!--/newposts-->", lambda m: cards, s, count=1, flags=_re.S)
     else:
@@ -371,7 +561,7 @@ def _blog_index(s):
         for x in j.get("@graph", []):
             if x.get("@type") == "Blog":
                 old = [b for b in x.get("blogPost", []) if not any(b.get("url") == C.SITE + p["path"] for p in POSTS)]
-                new = [{"@type": "BlogPosting", "headline": _html.unescape(_re.sub("<[^>]+>", "", p["h1"])), "url": C.SITE + p["path"], "description": p["desc"], "datePublished": "2026-10-11"} for p in POSTS]
+                new = [{"@type": "BlogPosting", "headline": _html.unescape(_re.sub("<[^>]+>", "", p["h1"])), "url": C.SITE + p["path"], "description": p["desc"], "datePublished": p["date"]} for p in _NEWEST]
                 x["blogPost"] = new + old
         return '<script type="application/ld+json">' + _json.dumps(j, ensure_ascii=False, separators=(",", ":")) + '</script>'
     s = _re.sub(r'<script type="application/ld\+json">(.*?)</script>', fix, s, count=1, flags=_re.S)
@@ -383,7 +573,7 @@ edit("blog/index.html", _blog_index)
 
 def _guides(s):
     block = ('<!--blognew--><span class="eyebrow" style="margin-top:46px">New on the blog</span><div class="grid g2">' +
-             "".join(f'<a class="card" href="{p["path"]}"><h3>{p["h1"]}</h3><p>{esc(p["desc"])}</p><span class="more">Read</span></a>' for p in POSTS) + '</div><!--/blognew-->')
+             "".join(f'<a class="card" href="{p["path"]}"><h3>{p["h1"]}</h3><p>{esc(p["desc"])}</p><span class="more">Read</span></a>' for p in _NEWEST) + '</div><!--/blognew-->')
     if "<!--blognew-->" in s:
         return _re.sub(r"<!--blognew-->.*?<!--/blognew-->", lambda m: block, s, count=1, flags=_re.S)
     return s.replace('<span class="eyebrow" style="margin-top:46px">Long reads</span>', block + '<span class="eyebrow" style="margin-top:46px">Long reads</span>', 1)
@@ -394,7 +584,7 @@ edit("guides/index.html", _guides)
 
 def _home_blog(s):
     block = ('<!--homeblog--><section><div class="wrap"><span class="eyebrow">From the blog</span><h2 class="sec-h">Straight answers before you buy.</h2><div class="grid g3">' +
-             "".join(f'<a class="card" href="{p["path"]}"><span class="kicker">{p["section"]}</span><h3>{p["h1"]}</h3><span class="more">Read it</span></a>' for p in POSTS[:3]) +
+             "".join(f'<a class="card" href="{p["path"]}"><span class="kicker">{p["section"]}</span><h3>{p["h1"]}</h3><span class="more">Read it</span></a>' for p in [q for q in POSTS if q["date"] == "2026-10-11"][:3]) +
              '</div><p style="margin-top:18px"><a href="/blog/">All articles &rarr;</a></p></div></section><!--/homeblog-->')
     if "<!--homeblog-->" in s:
         return _re.sub(r"<!--homeblog-->.*?<!--/homeblog-->", lambda m: block, s, count=1, flags=_re.S)

@@ -1,6 +1,7 @@
 # domain	category	tags	blurb  (source of truth; run python3 _build/build.py after editing)
 # NOT FOR SALE (owner 2026-10-11): zacharytyewennstedt.com — owned, deliberately excluded from this inventory
 # NOT FOR SALE (owner 2026-10-11): phoenixsworld.com — owner's daughter's site, deliberately excluded from this inventory
+# NOT LISTED (owner 2026-10-12: no typo domains on the site): bestdoghampoo.com, buycondocaberete.com, buyrealestatecaberete.com, ohaurealestate.com, puertoplatarealstate.com — owned, misspellings, deliberately excluded
 24-7answeringservice.com	prof	PE	Built for an answering service.
 acreageforsaleincolorado.com	realestate	PGE	Built for a land and acreage broker in Colorado.
 actionglobalnews.com	events	PDES	Built for a news publication.
@@ -20,6 +21,8 @@ aiagentsforaccounting.com	ai	PE	Built for an AI agent service for accounting fir
 aiagentsteams.com	ai	PE	Built for an AI agent team builder or managed AI agent service.
 ailifeboard.com	ai	PDBS	Built for a brandable AI product.
 aiodenver.com	marketing	PDGES	Built for an AI optimization agency in the Denver metro.
+aithatgrows.com	ai	PBS	Built for an AI product that learns alongside a growing business.
+aiyougrow.com	ai	PBS	Built for an AI coaching or business-growth tool.
 allinclusivemauiresorts.com	travel	PGE	Built for a resort or booking site on Maui.
 allinclusiveresortshawaii.com	travel	PGE	Built for a resort or booking site in Hawaii.
 allinclusiveresortsoahu.com	travel	PGE	Built for a resort or booking site on Oahu.
@@ -82,7 +85,6 @@ bestdivinghawaii.com	travel	PDGES	Built for a dive operator in Hawaii.
 bestdivinginhawaii.com	travel	PGES	Built for a dive operator in Hawaii.
 bestdivinginmaui.com	travel	PGES	Built for a dive operator on Maui.
 bestdivinginoahu.com	travel	PDGES	Built for a dive operator on Oahu.
-bestdoghampoo.com	pets	ES	Built for a dog shampoo brand (spelled doghampoo).
 bestdomainsforbusiness.com	marketing	PDCE	Built for a domain brokerage.
 bestfencecolorado.com	trades	PGES	Built for a fence contractor in Colorado.
 bestfencecompanycolorado.com	trades	PGE	Built for a fence contractor in Colorado.
@@ -133,6 +135,7 @@ bestvacationrentalsoahu.com	travel	PGE	Built for a vacation rental manager on Oa
 bestvrstores.com	vr	PES	Built for a VR retail or storefront directory.
 bestvrworlds.com	vr	PBS	Built for a VR experience or game brand.
 bestwebsitecoder.com	marketing	PCES	Built for a custom website developer.
+bigaibrain.com	ai	PBS	Built for a brandable AI product or AI learning brand.
 bigislandseo.com	marketing	PDGES	Built for an SEO agency on the Big Island.
 bogotaseo.com	marketing	PGES	Built for an SEO agency in Bogota.
 bookhotelandflights.com	travel	PDES	Built for a flight and hotel booking site.
@@ -173,7 +176,6 @@ buyboatnearme.com	auto	PES	Built for a boat dealer.
 buybrandedmerchandise.com	promo	PCE	Built for a promotional products supplier.
 buybrandedshirts.com	promo	PES	Built for a promotional products supplier.
 buycondobelize.com	realestate	PGES	Built for a condo sales agent in Belize.
-buycondocaberete.com	realestate	GES	Built for a condo sales agent in Cabarete.
 buycondocostarica.com	realestate	PGES	Built for a condo sales agent in Costa Rica.
 buycondohawaii.com	realestate	PGES	Built for a condo sales agent in Hawaii.
 buycondopuertoplata.com	realestate	PGES	Built for a condo sales agent in Puerto Plata.
@@ -185,7 +187,6 @@ buypropertybelize.com	realestate	PGES	Built for a property sales agent in Belize
 buypropertycabarete.com	realestate	PGES	Built for a property sales agent in Cabarete.
 buypropertypuertoplata.com	realestate	PGE	Built for a property sales agent in Puerto Plata.
 buypropertysosua.com	realestate	PGES	Built for a property sales agent in Sosua.
-buyrealestatecaberete.com	realestate	GE	Built for a real estate brokerage in Cabarete.
 buyrealestatecolorado.com	realestate	PGE	Built for a real estate brokerage in Colorado.
 buyrealestateinbelize.com	realestate	PGE	Built for a real estate brokerage in Belize.
 buyrealestatepuertoplata.com	realestate	PGE	Built for a real estate brokerage in Puerto Plata.
@@ -314,6 +315,7 @@ duiattorneygreeley.com	legal	PGES	Built for an attorney in Greeley.
 duilawyersingreeleyco.com	legal	PGE	Built for a law firm in Greeley.
 educationalgamewebsites.com	events	PE	Built for a games site.
 estesparkcorealestate.com	realestate	PGE	Built for a real estate brokerage in Estes Park.
+evoluneai.com	ai	PB	Built for a brandable AI startup.
 eyetoad.com	marketing	PDBS	Built for an established marketing agency.
 familylawattorneygreeley.com	legal	PXGE	Built for a family law attorney in Greeley.
 familylawattorneygreeleyco.com	legal	PXGE	Built for a family law attorney in Greeley.
@@ -456,7 +458,6 @@ nvbusinesslist.com	marketing	PGES	Built for a Nevada business directory.
 nybusinesslist.com	marketing	PGES	Built for a New York business directory.
 oahufishingguides.com	travel	PDGES	Built for a fishing charter or guide on Oahu.
 oahurealestate.homes	realestate	PGES	Built for a real estate brokerage on Oahu.
-ohaurealestate.com	realestate	GES	Built for a real estate brokerage on Oahu (a common misspelling of Oahu).
 omahamobiledetailing.com	auto	PDGE	Built for a mobile detailing service in Omaha.
 omahanecarpetcleaning.com	cleanmove	PDGE	Built for a carpet cleaning company in Omaha.
 omahaseopros.com	marketing	PDGES	Built for an SEO agency in Omaha.
@@ -485,7 +486,6 @@ probioticsfordogsguthealth.com	pets	PE	Built for a pet probiotic brand.
 propertiesforsalecolorado.com	realestate	PGE	Built for a property sales agent in Colorado.
 puertoplata-realestate.com	realestate	PGE	Built for a real estate brokerage in Puerto Plata.
 puertoplata-realty.com	realestate	PGE	Built for a real estate brokerage in Puerto Plata.
-puertoplatarealstate.com	realestate	GE	Built for a real estate brokerage in Puerto Plata (spelled realstate).
 puertoplatarestaurants.com	food	PDGE	Built for a Puerto Plata restaurant guide.
 puertoplataseo.com	marketing	PDGES	Built for an SEO agency in Puerto Plata.
 puertorico-seo.com	marketing	PDGE	Built for an SEO agency in Puerto Rico.
@@ -586,6 +586,7 @@ townhomesforsaledenver.com	realestate	PGE	Built for a townhome sales agent in th
 townhousesforsalenearme.com	realestate	PE	Built for a townhome sales agent.
 trailersdenver.com	auto	PGES	Built for a trailer dealer in the Denver metro.
 trailersforsalecolorado.com	auto	PGE	Built for a trailer dealer in Colorado.
+trainmyaiagents.com	ai	PES	Built for an AI agent training service or course.
 txbusinesslist.com	marketing	PGES	Built for a Texas business directory.
 txsautoinsurance.com	insurance	PES	Built for an insurance agency.
 unitedstatesseo.com	marketing	PCGES	Built for an SEO agency in the United States.
@@ -601,6 +602,7 @@ vacationhomeoahu.com	travel	PXGES	Built for a vacation rental manager on Oahu.
 vacationhomeshonolulu.com	travel	PGE	Built for a vacation rental manager in Honolulu.
 vacationhomesoahu.com	travel	PXGES	Built for a vacation rental manager on Oahu.
 vacationrentalbelize.com	travel	PGE	Built for a vacation rental manager in Belize.
+vettley.com	marketing	PDBS	Built for a business vetting and signal-report platform.
 virtualrealityadventure.com	vr	PDE	Built for a VR experience or attraction brand.
 virtualrealityflightsimulators.com	vr	PE	Built for a flight simulator or training brand.
 virtualrealitymalls.com	vr	PES	Built for a virtual retail platform.
